@@ -1342,7 +1342,7 @@
             activeIdx=-1;
             sheet.style.transform='translateY(120%)';
             bg.style.opacity='0'; bg.style.pointerEvents='none';
-            tooltips.forEach(function(t){ t.style.opacity='1'; t.style.transform='translateY(-50%) scale(1)'; });
+            tooltips.forEach(function(t){ t.style.opacity='1'; t.style.transform=(t.dataset.origTransform||'translateY(-50%)')+' scale(1)'; });
           }
           window.__rdmpCloseMob = closeSheet;
           function openSheet(idx,s) {
@@ -1350,7 +1350,7 @@
             activeIdx=idx;
             tooltips.forEach(function(t,j){
               t.style.opacity = j===idx ? '0' : '1';
-              t.style.transform = 'translateY(-50%) scale('+(j===idx?'0.8':'1')+')';
+              t.style.transform = (t.dataset.origTransform||'translateY(-50%)')+' scale('+(j===idx?'0.8':'1')+')';
             });
             sheet.innerHTML='';
             var handle=document.createElement('div');
@@ -1379,46 +1379,62 @@
             var isCenter=(i===0||i===4);
             var pinOnRight=pt.x>CX+10;
             
-            var tipOnRight = isCenter || !pinOnRight;
+            var tipOnRight = !pinOnRight;
             var arrowOnRight = !tipOnRight;
             
             var tipGap = 28;
             var edgeX = tipOnRight ? pt.x + tipGap : pt.x - tipGap;
+            var edgeDomX = edgeX * scale;
+            var tipDomY = py - (16 * scale);
 
-            /* SVG connector arc */
-            var midX=(pt.x+edgeX)/2;
-            var conn=document.createElementNS(NS,'path');
-            var startY = pt.y - 12;
-            var endY = pt.y - 16;
-            conn.setAttribute('d',
-              'M'+pt.x.toFixed(1)+','+startY.toFixed(1)+
-              ' Q'+midX.toFixed(1)+','+(startY-12).toFixed(1)+
-              ' '+edgeX.toFixed(1)+','+endY.toFixed(1));
-            conn.setAttribute('stroke',s.color); conn.setAttribute('stroke-width','2');
-            conn.setAttribute('fill','none'); conn.setAttribute('stroke-dasharray','5 4');
-            conn.setAttribute('stroke-linecap','round');
-            conn.setAttribute('opacity','0.7');
-            conn.style.cssText='animation:rdmp2ConnFlow .7s linear infinite;';
-            connG.appendChild(conn);
+            if (!isCenter) {
+              /* SVG connector arc */
+              var midX=(pt.x+edgeX)/2;
+              var conn=document.createElementNS(NS,'path');
+              var startY = pt.y - 12;
+              var endY = pt.y - 16;
+              conn.setAttribute('d',
+                'M'+pt.x.toFixed(1)+','+startY.toFixed(1)+
+                ' Q'+midX.toFixed(1)+','+(startY-12).toFixed(1)+
+                ' '+edgeX.toFixed(1)+','+endY.toFixed(1));
+              conn.setAttribute('stroke',s.color); conn.setAttribute('stroke-width','2');
+              conn.setAttribute('fill','none'); conn.setAttribute('stroke-dasharray','5 4');
+              conn.setAttribute('stroke-linecap','round');
+              conn.setAttribute('opacity','0.7');
+              conn.style.cssText='animation:rdmp2ConnFlow .7s linear infinite;';
+              connG.appendChild(conn);
+            }
 
             /* Speech-bubble tooltip pill */
             var lico = s.ico ? s.ico.replace('width="19" height="19"','width="13" height="13"') : s.icon;
 
-            var arrowHTML = arrowOnRight
-              ? '<div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:10px solid ' + s.color + ';"></div>'
-              : '<div style="position:absolute;left:-11px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-right:10px solid ' + s.color + ';"></div>';
+            var arrowHTML = '';
+            var hPos = '';
+            var tPos = '';
+            var origTransform = '';
 
-            var edgeDomX = edgeX * scale;
-            var tipDomY = py - (16 * scale);
+            if (isCenter) {
+              arrowHTML = '<div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:10px solid ' + s.color + ';"></div>';
+              hPos = 'left:' + px + 'px;';
+              tPos = 'top:' + (py + (12 * scale)) + 'px;';
+              origTransform = 'translateX(-50%)';
+            } else if (arrowOnRight) {
+              arrowHTML = '<div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:10px solid ' + s.color + ';"></div>';
+              hPos = 'right:' + (svgW - edgeDomX) + 'px;';
+              tPos = 'top:' + tipDomY + 'px;';
+              origTransform = 'translateY(-50%)';
+            } else {
+              arrowHTML = '<div style="position:absolute;left:-11px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-right:10px solid ' + s.color + ';"></div>';
+              hPos = 'left:' + edgeDomX + 'px;';
+              tPos = 'top:' + tipDomY + 'px;';
+              origTransform = 'translateY(-50%)';
+            }
 
             var tip = document.createElement('div');
-            var hPos = arrowOnRight 
-              ? 'right:' + (svgW - edgeDomX) + 'px;' 
-              : 'left:' + edgeDomX + 'px;';
-
+            tip.dataset.origTransform = origTransform;
             tip.style.cssText =
-              'position:absolute;' + hPos + 'top:' + tipDomY + 'px;' +
-              'transform:translateY(-50%);' +
+              'position:absolute;' + hPos + tPos +
+              'transform:' + origTransform + ';' +
               'background:rgba(255,255,255,.97);' +
               'border:2px solid ' + s.color + ';border-radius:14px;' +
               'padding:8px 14px 8px 10px;' +
