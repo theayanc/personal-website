@@ -507,6 +507,24 @@
             width: 100%;
             position: relative;
         }
+
+        .nav-cta-btn {
+            background-color: #2563eb !important;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+        }
+        .nav-cta-btn .medium-s {
+            color: #ffffff !important;
+        }
+        .nav-cta-btn:hover {
+            background-color: #1d4ed8 !important;
+            box-shadow: 0 12px 24px -8px rgba(37, 99, 235, 0.4) !important;
+            transform: translateY(-4px) scale(1.02) !important;
+        }
+
+        .footer-menu a.menu-item:hover,
+        .legal-links a.menu-item:hover {
+            color: #2563eb !important;
+        }
     </style>
 </head>
 
@@ -539,7 +557,7 @@
                         </a>
                     </div>
                 </div>
-                <a data-wf--button--variant="primary" href="#Banner" class="button w-inline-block">
+                <a data-wf--button--variant="primary" href="#Banner" class="button nav-cta-btn w-inline-block">
                     <div class="medium-s">Get Interview Ready</div>
                 </a>
             </div>
@@ -2803,7 +2821,7 @@
                             Available for Enterprise Projects
                         </div>
                         <h2 class="ent-cta-heading">
-                            From strategy to implementation —<br>
+                            From strategy to implementation,<br>
                             I help enterprises turn data into a<br>
                             <span style="color:#2563eb;">competitive advantage.</span>
                         </h2>
