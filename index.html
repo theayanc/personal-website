@@ -1161,7 +1161,7 @@
               '<p class="rdmp2-card-desc">' + s.desc + '</p>' +
               '<ul class="rdmp2-blist">' + bl + '</ul>' +
               '<button class="rdmp2-btn" style="background:' + s.color + ';box-shadow:0 6px 22px ' + hShadow(s.color,.42) + '"' +
-                ' onclick="var el=document.getElementById(\'Banner\');if(el)el.scrollIntoView({behavior:\'smooth\'});var bg=document.getElementById(\'rmobBg\');if(bg)bg.click();var ovl=document.getElementById(\'rdmp2Ovl\');if(ovl&&ovl.onmouseleave)ovl.onmouseleave();">' +
+                ' onclick="var el=document.getElementById(\'Banner\');if(el)el.scrollIntoView({behavior:\'smooth\'});if(window.__rdmpCloseMob)window.__rdmpCloseMob();if(window.__rdmpCloseDesk)window.__rdmpCloseDesk();">' +
                 'Know More ' +
                 '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
               '</button>' +
@@ -1338,6 +1338,7 @@
             bg.style.opacity='0'; bg.style.pointerEvents='none';
             tooltips.forEach(function(t){ t.style.opacity='1'; t.style.transform='translateY(-50%) scale(1)'; });
           }
+          window.__rdmpCloseMob = closeSheet;
           function openSheet(idx,s) {
             if (activeIdx===idx){ closeSheet(); return; }
             activeIdx=idx;
@@ -1528,6 +1529,7 @@
               bridge.style.display = 'none';
             }, 350);
           }
+          window.__rdmpCloseDesk = hideCard;
           function clearHide() { clearTimeout(ovlTimer); }
           ovl.onmouseenter = clearHide;
           ovl.onmouseleave = hideCard;
