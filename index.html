@@ -792,6 +792,62 @@
         }
 
     </style>
+
+    <style>
+    @media (max-width: 767px) {
+        .testimonial-blocks-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+            padding: 8px 0 0 !important;
+            align-items: stretch !important;
+        }
+
+        .testimonial-blocks {
+            display: contents !important;
+        }
+
+        .testimonial-block-wrapper {
+            transform: none !important;
+            -webkit-transform: none !important;
+            width: 100% !important;
+            opacity: 0;
+            transform: translateY(32px) !important;
+            transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1) !important;
+        }
+
+        .testimonial-block-wrapper.t-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .testimonial-block {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.07) !important;
+            border-radius: 16px !important;
+        }
+    }
+    </style>
+
+    <script>
+    (function(){
+        if(window.innerWidth > 767) return;
+        function initT() {
+            var cards = document.querySelectorAll('.testimonial-block-wrapper');
+            if(!cards.length) return;
+            var io = new IntersectionObserver(function(entries){
+                entries.forEach(function(e, i){
+                    if(e.isIntersecting){
+                        setTimeout(function(){ e.target.classList.add('t-visible'); }, 80);
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            cards.forEach(function(c){ io.observe(c); });
+        }
+        if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initT);
+        else initT();
+    })();
+    </script>
 </head>
 
 <body>
@@ -818,12 +874,12 @@
                         <a data-wf--menu-item--variant="nav" href="#FAQ" class="menu-item w-inline-block">
                             <div class="medium-s">FAQ</div>
                         </a>
-                        <a data-wf--menu-item--variant="nav" href="#Banner" class="menu-item w-inline-block">
+                        <a data-wf--menu-item--variant="nav" href="contact.html" class="menu-item w-inline-block">
                             <div class="medium-s">Contact</div>
                         </a>
                     </div>
                 </div>
-                <a data-wf--button--variant="primary" href="#Banner" class="button w-inline-block">
+                <a data-wf--button--variant="primary" href="contact.html" class="button w-inline-block">
                     <div class="medium-s">Get Interview Ready</div>
                 </a>
             </div>
@@ -883,7 +939,7 @@
 
                     <div style="-webkit-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
                         class="buttons-wrapper hero-buttons-wrapper">
-                        <a data-wf--button--variant="primary" href="#Banner" class="button w-inline-block">
+                        <a data-wf--button--variant="primary" href="contact.html" class="button w-inline-block">
                             <div class="medium-s">Prepare With Ayan</div>
                         </a>
                         <a data-wf--button--variant="secondary" href="https://chat.whatsapp.com/HlmkKGvyuCo286FLSkiVbX"
@@ -938,11 +994,11 @@
             </div>
         </div>
     </section>
-
+<br><br><br><br>
     <!-- ═══════════════════════════════════════════════════════════
          ROADMAP SECTION — "How I Actually Help"
          ═══════════════════════════════════════════════════════════ -->
-    <section id="Approach" class="rdmp2-section">
+    <section id="Approach" class="rdmp2-section" style="padding-bottom: 120px;">
 
         <style>
             .rdmp2-section {
@@ -1611,7 +1667,6 @@
             }
         </style>
 
-        <br><br><br>
 
         <!-- ── HEADER ── -->
         <div class="w-layout-blockcontainer container w-container">
@@ -2341,8 +2396,7 @@
         </script>
 
     </section>
-    <br><br><br><br><br>
-    <section id="System" class="section bottom-padding" style="padding-bottom: 80px;">
+    <section id="System" class="section bottom-padding" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="w-layout-blockcontainer container without-padding w-container">
             <style>
                 .ent-section {
@@ -2663,12 +2717,12 @@
                 /* ─── CTA Footer – Premium Aurora Card ─── */
                 .ent-footer {
                     position: relative;
-                    padding: 72px 0 0;
+                    padding: 40px 0 0;
                 }
 
                 .ent-cta-card {
                     text-align: center;
-                    padding: 72px 0 0;
+                    padding: 40px 0 0;
                 }
 
                 @keyframes ent-aurora-slide {
@@ -3096,7 +3150,7 @@
                             <span style="color:#2563eb;">competitive advantage.</span>
                         </h2>
                         <div class="ent-actions">
-                            <a href="#Banner" class="ent-btn-dark">
+                            <a href="contact.html" class="ent-btn-dark">
                                 Book a Consultation
                                 <span class="ent-btn-arrow">→</span>
                             </a>
@@ -3108,7 +3162,7 @@
             </div>
         </div>
     </section>
-    <section id="Instructor" class="section bottom-padding" style="padding-top: 80px; padding-bottom: 100px; background: #fafafa;">
+    <section id="Instructor" class="section bottom-padding" style="padding-top: 120px; padding-bottom: 120px; background: #fafafa;">
         <div class="w-layout-blockcontainer container w-container">
 
             <!-- Mobile-only section heading -->
@@ -3200,130 +3254,68 @@
         </div>
     </section>
 
-    <br><br>
-        <section id="Testimonials" class="section bottom-padding">
+    <section id="Testimonials" class="section bottom-padding" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="w-layout-blockcontainer container w-container">
             <div class="section-content align-center">
                 <h2 class="h2 section-heading align-center">See what my colleagues &amp; leaders <span style="color:#2563eb;">say</span></h2>
-                <div data-w-id="97daf75a-bbd1-52a5-31e9-eb35f97cade2" class="testimonial-blocks-wrapper"><img
-                        src="src/Testimonials/Debarishi.png"
-                        style="display:none;" alt="" />
+                <div data-w-id="97daf75a-bbd1-52a5-31e9-eb35f97cade2" class="testimonial-blocks-wrapper">
+                    <img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb797d50d60981d8efc42_Scribble%201.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon scribble testimonial-first" />
+                    <img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79721f9d47dbb7c9d81_Scribble%205.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon scribble testimonial-second" />
                     <div class="testimonial-blocks first-blocks">
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)"
-                            class="testimonial-block-wrapper first-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)" class="testimonial-block-wrapper first-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
-                                    </div>
+                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
                                     <div class="medium-m block-description medium-width text-opacity">Ayan consistently demonstrated strong technical expertise, ownership, and architectural thinking. His ability to design scalable, reliable data solutions made him a key contributor to project success.</div>
                                 </div>
-                                <div class="name-wrapper"><img
-                                        src="src/Testimonials/Debarishi.png"
-                                        loading="lazy" width="Auto" height="Auto" alt="Debarshi Dutta" class="image avatar" />
+                                <div class="name-wrapper"><img src="src/Testimonials/Debarishi.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
                                     <div class="medium-s">Debarshi Dutta • Managing Director, Data &amp; AI</div>
                                 </div>
                             </div>
                         </div>
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0)"
-                            class="testimonial-block-wrapper second-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0)" class="testimonial-block-wrapper second-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
-                                    </div>
+                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
                                     <div class="medium-m block-description medium-width text-opacity">Ayan combines deep expertise in data ecosystems with exceptional collaboration and leadership. Reliable, adaptable, and always willing to mentor others.</div>
                                 </div>
-                                <div class="name-wrapper"><img
-                                        src="src/Testimonials/Diana.png"
-                                        loading="lazy" width="Auto" height="Auto" alt="Diana Yin" class="image avatar" />
+                                <div class="name-wrapper"><img src="src/Testimonials/Diana.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
                                     <div class="medium-s">Diana Yin • AI Product Management</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)" class="testimonial-block-wrapper third-block">
+                            <div class="testimonial-block">
+                                <div class="block-content-wrapper">
+                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan is a talented data professional who consistently delivers high-quality work. His expertise in data pipelines, warehousing, and analytics makes him a valuable asset to any team.</div>
+                                </div>
+                                <div class="name-wrapper"><img src="src/Testimonials/Matti.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
+                                    <div class="medium-s">Matti Kakkori • AI Product</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-blocks">
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0)"
-                            class="testimonial-block-wrapper fourth-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0)" class="testimonial-block-wrapper fourth-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
-                                    </div>
-                                    <div class="medium-m block-description medium-width text-opacity">Ayan is a talented data professional who consistently delivers high-quality work. His expertise in data pipelines, warehousing, and analytics makes him a valuable asset to any team.</div>
+                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan brings exceptional expertise in data warehousing and visualization, paired with a strong work ethic and collaborative mindset. His mentoring ability and commitment to excellence make him an invaluable asset to any team.</div>
                                 </div>
-                                <div class="name-wrapper"><img
-                                        src="src/Testimonials/Matti.png"
-                                        loading="lazy" width="Auto" height="Auto" alt="Matti Kakkori" class="image avatar" />
-                                    <div class="medium-s">Matti Kakkori • AI Product</div>
+                                <div class="name-wrapper"><img src="src/Testimonials/Anton.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
+                                    <div class="medium-s">Anton Sakharov • Senior Big Data Engineer</div>
                                 </div>
                             </div>
                         </div>
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0)"
-                            class="testimonial-block-wrapper fifth-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0)" class="testimonial-block-wrapper fifth-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
-                                    </div>
-                                    <div class="medium-m block-description medium-width text-opacity">Ayan brings exceptional expertise in data warehousing and visualization, paired with a strong work ethic and collaborative mindset. His mentoring ability and commitment to excellence make him an invaluable asset to any team.</div>
+                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
+                                    <div class="medium-m block-description medium-width text-opacity">Working with Ayan was a genuine pleasure. He brings clarity to complex data challenges and elevates the entire team with his depth of knowledge and collaborative energy.</div>
                                 </div>
-                                <div class="name-wrapper"><img
-                                        src="src/Testimonials/Anton.png"
-                                        loading="lazy" width="Auto" height="Auto" alt="Anton Sakharov" class="image avatar" />
-                                    <div class="medium-s">Anton Sakharov • Senior Big Data Engineer</div>
+                                <div class="name-wrapper"><img src="src/Testimonials/Debarishi.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
+                                    <div class="medium-s">Debarshi Dutta • Managing Director, Data &amp; AI</div>
                                 </div>
                             </div>
                         </div>
@@ -3333,7 +3325,7 @@
         </div>
     </section>
 
-    <section id="FAQ" class="section bottom-padding">
+        <section id="FAQ" class="section bottom-padding" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="w-layout-blockcontainer container w-container">
             <div class="section-content align-center">
                 <h2 class="h2 section-heading align-center">Common <span style="color:#2563eb;">questions</span></h2>
@@ -3471,7 +3463,7 @@
                         <div data-w-id="ae89a26a-c3ce-20e9-81a1-cc4eb02cce73"
                             style="-webkit-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
                             class="buttons-wrapper">
-                            <a data-wf--button--variant="primary" href="#Banner" class="button w-inline-block">
+                            <a data-wf--button--variant="primary" href="contact.html" class="button w-inline-block">
                                 <div class="medium-s">Get a Free Review</div>
                             </a>
                             <a data-wf--button--variant="secondary"
@@ -3516,7 +3508,7 @@
                                         class="menu-item w-variant-d956fb3c-ecc1-3b1b-b1ab-4d9ec71b5ee6 w-inline-block">
                                         <div class="medium-s">Testimonials</div>
                                     </a>
-                                    <a data-wf--menu-item--variant="footer" href="#Banner"
+                                    <a data-wf--menu-item--variant="footer" href="contact.html"
                                         class="menu-item w-variant-d956fb3c-ecc1-3b1b-b1ab-4d9ec71b5ee6 w-inline-block">
                                         <div class="medium-s">Contact</div>
                                     </a>
@@ -3545,7 +3537,7 @@
                             <div class="menu-block">
                                 <div class="medium-s">Resources</div>
                                 <div class="footert-menu-items">
-                                    <a data-wf--menu-item--variant="footer" href="#Banner"
+                                    <a data-wf--menu-item--variant="footer" href="contact.html"
                                         class="menu-item w-variant-d956fb3c-ecc1-3b1b-b1ab-4d9ec71b5ee6 w-inline-block">
                                         <div class="medium-s">Mock Interviews</div>
                                     </a>
@@ -3557,7 +3549,7 @@
                                         class="menu-item w-variant-d956fb3c-ecc1-3b1b-b1ab-4d9ec71b5ee6 w-inline-block">
                                         <div class="medium-s">Interview FAQ</div>
                                     </a>
-                                    <a data-wf--menu-item--variant="footer" href="#Banner"
+                                    <a data-wf--menu-item--variant="footer" href="contact.html"
                                         class="menu-item w-variant-d956fb3c-ecc1-3b1b-b1ab-4d9ec71b5ee6 w-inline-block">
                                         <div class="medium-s">Free Review</div>
                                     </a>
