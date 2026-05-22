@@ -512,6 +512,12 @@
             color: #2563eb !important;
         }
 
+        /* Mobile-only About Me heading */
+        .am-mobile-heading { display: none; }
+        @media (max-width: 767px) {
+            #Instructor { padding-top: 20px !important; }
+        }
+
         /* ── About Me (Instructor) section ── */
         .am-grid {
             display: grid;
@@ -730,6 +736,7 @@
 
         /* Mobile */
         @media (max-width: 767px) {
+            .am-mobile-heading { display: block; margin-bottom: 20px; }
             .am-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
@@ -1641,7 +1648,6 @@
             </div> -->
             </div>
 
-            <br><br><br><br>
         </div>
         </div>
 
@@ -2858,6 +2864,11 @@
                         padding: 44px 24px 40px;
                     }
                 }
+                @media (max-width: 767px) {
+                    .ent-footer { display: none !important; }
+                    .ent-section { padding-bottom: 0 !important; }
+                    #System { padding-bottom: 20px !important; }
+                }
             </style>
 
             <div class="ent-section">
@@ -3100,6 +3111,11 @@
     <section id="Instructor" class="section bottom-padding" style="padding-top: 80px; padding-bottom: 100px; background: #fafafa;">
         <div class="w-layout-blockcontainer container w-container">
 
+            <!-- Mobile-only section heading -->
+            <div class="am-mobile-heading">
+                <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;">About Me</div>
+            </div>
+
             <!-- 2-col main grid -->
             <div class="am-grid">
 
@@ -3184,6 +3200,7 @@
         </div>
     </section>
 
+    <br><br>
         <section id="Testimonials" class="section bottom-padding">
         <div class="w-layout-blockcontainer container w-container">
             <div class="section-content align-center">
