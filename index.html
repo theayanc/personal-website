@@ -110,6 +110,7 @@
         .medium-l.section-description,
         .medium-l.hero-description {
             max-width: 760px;
+            margin-bottom: 0 !important;
         }
 
         @media (max-width: 991px) {
@@ -153,10 +154,9 @@
         .hero-vp-list {
             display: flex;
             flex-direction: column;
-            gap: 0;
-            margin-top: 32px;
+            gap: 4px;
+            margin-top: 16px;
             margin-bottom: 8px;
-            border-top: 1px solid rgba(15, 23, 42, 0.06);
             width: 100%;
             max-width: 500px;
         }
@@ -165,8 +165,7 @@
             display: flex;
             align-items: flex-start;
             gap: 16px;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+            padding: 6px 0;
             transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: pointer;
         }
@@ -512,6 +511,279 @@
         .legal-links a.menu-item:hover {
             color: #2563eb !important;
         }
+
+        /* ── About Me (Instructor) section ── */
+        .am-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        /* Profile card — reuse instructor-card but force full height */
+        .am-profile-card {
+            position: relative !important;
+            overflow: hidden !important;
+            min-height: 820px;
+        }
+
+        /* Show person-info inside the about-me profile card */
+        .am-person-info {
+            display: flex !important;
+        }
+
+        /* Map card */
+        .am-map-card {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 20px;
+            padding: 32px 28px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+
+        .am-map-heading {
+            font-size: clamp(15px, 2vw, 18px);
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.55;
+            max-width: 520px;
+        }
+
+        .am-highlight {
+            color: #2563eb;
+            font-weight: 800;
+        }
+
+        /* Map image container with pins */
+        .am-map-wrapper {
+            position: relative;
+            width: calc(100% + 64px);
+            margin-left: -32px;
+            margin-right: -32px;
+            overflow: hidden;
+            min-height: 300px;
+            max-height: 380px;
+        }
+
+        .am-map-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: -5%;
+            margin-bottom: -18%;
+            -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 100%);
+            mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 100%);
+        }
+
+        /* Map pins */
+        .am-pin {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            cursor: default;
+            z-index: 2;
+        }
+
+        .am-pin-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px rgba(37,99,235,0.3), 0 2px 6px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .am-pin-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(37,99,235,0.2);
+            animation: pin-pulse 2s ease-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes pin-pulse {
+            0%   { transform: translate(-50%,-50%) scale(0.5); opacity: 0.8; }
+            100% { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
+        }
+
+        .am-pin-label {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(37,99,235,0.15);
+            border-radius: 6px;
+            padding: 3px 8px;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #1e40af;
+            white-space: nowrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+            letter-spacing: 0.1px;
+        }
+
+        /* Country chips below map */
+        .am-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .am-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            background: #f8faff;
+            border: 1px solid rgba(37,99,235,0.15);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1e40af;
+        }
+
+        /* Stats strip */
+        .am-stats {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-top: 32px;
+            padding: 28px 40px;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .am-stat-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .am-stat-value {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+        }
+
+        .am-stat-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        .am-stat-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(0,0,0,0.09);
+            margin: 0 16px;
+        }
+
+        /* Experience blocks inside right card */
+        .am-exp-blocks {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+        }
+        .am-exp-block {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .am-exp-tag {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+        .am-exp-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.35;
+        }
+        .am-exp-divider {
+            width: 1px;
+            background: rgba(0,0,0,0.09);
+            align-self: stretch;
+            margin: 0 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 767px) {
+            .am-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .am-profile-card {
+                min-height: 380px;
+            }
+            /* No bleed on mobile — map sits naturally */
+            .am-map-wrapper {
+                margin-bottom: -40px;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                min-height: 200px;
+                max-height: 260px;
+            }
+            /* Remove fade mask on mobile */
+            .am-map-img {
+                -webkit-mask-image: none;
+                mask-image: none;
+                margin-top: -5%;
+                margin-bottom: -18%;
+            }
+            /* Smaller person-info card on mobile */
+            .am-person-info {
+                padding: 14px 16px 14px !important;
+                gap: 10px !important;
+            }
+            .am-person-info .medium-l {
+                font-size: 15px !important;
+            }
+            .am-person-info .medium-s {
+                font-size: 12px !important;
+            }
+            .am-person-info .social-button {
+                width: 32px !important;
+                height: 32px !important;
+            }
+            .am-person-info .social-button-icon {
+                width: 14px !important;
+                height: 14px !important;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .am-profile-card {
+                min-height: 320px;
+            }
+            .am-map-wrapper {
+                min-height: 160px;
+                max-height: 220px;
+            }
+        }
+
     </style>
 </head>
 
@@ -2825,29 +3097,31 @@
             </div>
         </div>
     </section>
-    <section id="Instructor" class="section bottom-padding" style="padding-top: 80px;">
+    <section id="Instructor" class="section bottom-padding" style="padding-top: 80px; padding-bottom: 100px; background: #fafafa;">
         <div class="w-layout-blockcontainer container w-container">
-            <div class="small-content instructor-content">
+
+            <!-- 2-col main grid -->
+            <div class="am-grid">
+
+                <!-- LEFT: Profile card (keep existing structure) -->
                 <div data-w-id="34299669-9bd5-daed-4b01-100b963fcfc7"
-                    style="-webkit-transform:translate3d(0, 20px, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20px, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20px, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20px, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0; background-image:url('src/profile.png'); background-size:cover; background-position:center center; background-repeat:no-repeat; background-color:#ffffff; background-origin:border-box; background-clip:border-box;"
-                    class="instructor-card">
-                    <div class="person-info">
+                    style="background-image:url('src/profile.png'); background-size:cover; background-position:center center; background-repeat:no-repeat;"
+                    class="instructor-card am-profile-card">
+                    <div class="person-info am-person-info">
                         <div class="block-text-wrapper xsmall-gap grow-content">
                             <div class="medium-l">Ayan Chakraborty</div>
                             <div class="medium-s text-opacity">Data Architect • AWS • Snowflake • SQL</div>
                         </div>
                         <div class="horizontal-content">
-                            <a href="https://www.tiktok.com/" target="_blank" class="social-button w-inline-block"><img
+                            <a href="https://www.linkedin.com/" target="_blank" class="social-button w-inline-block"><img
                                     src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79ff3846f1282dd774a_LinkedIn.svg"
                                     loading="lazy" width="Auto" height="Auto" alt=""
                                     class="icon social-button-icon" /></a>
-
                             <a href="https://www.instagram.com/" target="_blank"
                                 class="social-button w-inline-block"><img
                                     src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79fc954ba3e76b55e06_Instagram.svg"
                                     loading="lazy" width="Auto" height="Auto" alt=""
                                     class="icon social-button-icon" /></a>
-
                             <a href="https://www.youtube.com/" target="_blank" class="social-button w-inline-block"><img
                                     src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79f5e17e97f5ea9f62f_YouTube.svg"
                                     loading="lazy" width="Auto" height="Auto" alt=""
@@ -2855,6 +3129,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- RIGHT: Original instructor-info -->
                 <div data-w-id="34299669-9bd5-daed-4b01-100b963fcfd5"
                     style="-webkit-transform:translate3d(0, 20px, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20px, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20px, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20px, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0;"
                     class="instructor-info">
@@ -2862,27 +3138,20 @@
                         <div class="block-text-wrapper large-gap">
                             <div class="block-text-wrapper small-gap">
                                 <div class="medium-s text-opacity">About me</div>
-                                <h2 class="h2 h2-small">I help engineers crack technical interviews by teaching them how
-                                    to think like a Senior Data Architect</h2>
+                                <h2 class="h2 h2-small">I turn engineers into architects <span style="color:#2563eb;">the world trusts.</span></h2>
+                            <p class="medium-m" style="color:#64748b; font-size:14.5px; line-height:1.65; margin:10px 0 0;">With 14+ years building petabyte-scale systems for global enterprises, I train you to master the engineering mindset behind production-level data architecture — not just the tools.</p>
                             </div>
-                            <p class="medium-m large-block-description">With over 14 years of experience building
-                                petabyte-scale cloud data systems for global businesses, I've seen exactly how top
-                                companies evaluate talent. I don't just teach tools; I train you to master the
-                                engineering mindset required to solve production-level problems and lead technical
-                                discussions with authority.<br />‍<br />
-
-                                My focus is simple - I bridge the gap between knowing the technology and communicating
-                                your expertise clearly. I help you build a professional narrative that demonstrates your
-                                ability to design systems that don't break when you scale.</p>
-
-
+                            <!-- World map -->
+                            <div class="am-map-wrapper" style="margin-top:4px;">
+                                <img src="src/map2.png" alt="World map" class="am-map-img" />
+                            </div>
                         </div>
                         <div class="block-content-wrapper">
-                            <div class="medium-s text-opacity expertise-header">Experience & Expertise</div>
+                            <div class="medium-s text-opacity expertise-header">Experience &amp; Expertise</div>
                             <div class="value-blocks-wrapper">
                                 <div class="value-block">
                                     <div class="value-tag">Experience</div>
-                                    <div class="medium-l">14+ Years</div>
+                                    <div class="medium-l">14+ Years • 100+ Projects</div>
                                 </div>
                                 <div class="value-divider"></div>
                                 <div class="value-block">
@@ -2902,55 +3171,26 @@
                     <div class="collaborations">
                         <div class="medium-s text-opacity">Brands I have worked with</div>
                         <div class="ticker">
-                            <div class="ticker-line"><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fe25be05feb4c4d81_Logo%201.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f0a25f13877aa96d1_Logo%202.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f0b449972a2a1b337_Logo%203.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f9ad1e025b05f5c2a_Logo%204.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fd7c5146463478336_Logo%205.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fe0be59f9dfb531d8_Logo%206.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /></div>
-                            <div class="ticker-line"><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fe25be05feb4c4d81_Logo%201.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f0a25f13877aa96d1_Logo%202.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f0b449972a2a1b337_Logo%203.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f9ad1e025b05f5c2a_Logo%204.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fd7c5146463478336_Logo%205.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img
-                                    src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fe0be59f9dfb531d8_Logo%206.svg"
-                                    loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /></div>
+                            <div class="ticker-line"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fe25be05feb4c4d81_Logo%201.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f0a25f13877aa96d1_Logo%202.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f0b449972a2a1b337_Logo%203.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f9ad1e025b05f5c2a_Logo%204.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fd7c5146463478336_Logo%205.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fe0be59f9dfb531d8_Logo%206.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /></div>
+                            <div class="ticker-line"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fe25be05feb4c4d81_Logo%201.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f0a25f13877aa96d1_Logo%202.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f0b449972a2a1b337_Logo%203.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77f9ad1e025b05f5c2a_Logo%204.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fd7c5146463478336_Logo%205.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb77fe0be59f9dfb531d8_Logo%206.svg" loading="lazy" width="Auto" height="Auto" alt="" class="image ticker-image" /></div>
                             <div class="overlay ticker-overlay left"></div>
                             <div class="overlay ticker-overlay right"></div>
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <section id="Testimonials" class="section bottom-padding">
+        <section id="Testimonials" class="section bottom-padding">
         <div class="w-layout-blockcontainer container w-container">
             <div class="section-content align-center">
-                <h2 class="h2 section-heading align-center">What my students <span style="color:#2563eb;">say</span></h2>
+                <h2 class="h2 section-heading align-center">See what my colleagues &amp; leaders <span style="color:#2563eb;">say</span></h2>
                 <div data-w-id="97daf75a-bbd1-52a5-31e9-eb35f97cade2" class="testimonial-blocks-wrapper"><img
-                        src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb797d50d60981d8efc42_Scribble%201.svg"
-                        loading="lazy" width="Auto" height="Auto" alt=""
-                        style="-webkit-transform:translate3d(-12px, 40px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(15deg) skew(0, 0);-moz-transform:translate3d(-12px, 40px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(15deg) skew(0, 0);-ms-transform:translate3d(-12px, 40px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(15deg) skew(0, 0);transform:translate3d(-12px, 40px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(15deg) skew(0, 0);opacity:0"
-                        class="icon scribble testimonial-first" /><img
-                        src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79721f9d47dbb7c9d81_Scribble%205.svg"
-                        loading="lazy" width="Auto" height="Auto" alt=""
-                        data-w-id="97daf75a-bbd1-52a5-31e9-eb35f97caddf"
-                        style="-webkit-transform:translate3d(20px, -20px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(45deg) skew(0, 0);-moz-transform:translate3d(20px, -20px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(45deg) skew(0, 0);-ms-transform:translate3d(20px, -20px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(45deg) skew(0, 0);transform:translate3d(20px, -20px, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(45deg) skew(0, 0);opacity:0"
-                        class="icon scribble testimonial-second" />
+                        src="src/Testimonials/Debarishi.png"
+                        style="display:none;" alt="" />
                     <div class="testimonial-blocks first-blocks">
                         <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)"
                             class="testimonial-block-wrapper first-block">
@@ -2972,14 +3212,12 @@
                                             src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
                                             loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
                                     </div>
-                                    <div class="medium-m block-description medium-width text-opacity">Ayan helped me
-                                        structure my projects the right way. The way he breaks down complex topics and
-                                        explains real-world scenarios is exceptional.</div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan consistently demonstrated strong technical expertise, ownership, and architectural thinking. His ability to design scalable, reliable data solutions made him a key contributor to project success.</div>
                                 </div>
                                 <div class="name-wrapper"><img
-                                        src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb790f9a93bd983fe5d57_Benjamin%20Ross.avif"
-                                        loading="lazy" width="Auto" height="Auto" alt="Rohit S." class="image avatar" />
-                                    <div class="medium-s">Rohit S. • Data Engineer</div>
+                                        src="src/Testimonials/Debarishi.png"
+                                        loading="lazy" width="Auto" height="Auto" alt="Debarshi Dutta" class="image avatar" />
+                                    <div class="medium-s">Debarshi Dutta • Managing Director, Data &amp; AI</div>
                                 </div>
                             </div>
                         </div>
@@ -3003,52 +3241,18 @@
                                             src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
                                             loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
                                     </div>
-                                    <div class="medium-m block-description medium-width text-opacity">I learned how to
-                                        think like an architect. Ayan's guidance on system design and trade-offs
-                                        completely changed the way I approach interviews.</div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan combines deep expertise in data ecosystems with exceptional collaboration and leadership. Reliable, adaptable, and always willing to mentor others.</div>
                                 </div>
                                 <div class="name-wrapper"><img
-                                        src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79014f400629eb334b9_Lina%20S..avif"
-                                        loading="lazy" width="Auto" height="Auto" alt="Priya K." class="image avatar" />
-                                    <div class="medium-s">Priya K. • Data Architect</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)"
-                            class="testimonial-block-wrapper third-block">
-                            <div class="testimonial-block">
-                                <div class="block-content-wrapper">
-                                    <div class="rating"><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt=""
-                                            class="icon rating-icon" /><img
-                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
-                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
-                                    </div>
-                                    <div class="medium-m block-description medium-width text-opacity">Before working
-                                        with Ayan, I struggled to explain my projects clearly. After our sessions, I was
-                                        able to crack multiple rounds with confidence.</div>
-                                </div>
-                                <div class="name-wrapper"><img
-                                        src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb790871be6f3b793de7e_Person%20Image%203.avif"
-                                        loading="lazy" width="Auto" height="Auto" alt="Vikram M."
-                                        class="image avatar" />
-                                    <div class="medium-s">Vikram M. • Cloud Data Engineer</div>
+                                        src="src/Testimonials/Diana.png"
+                                        loading="lazy" width="Auto" height="Auto" alt="Diana Yin" class="image avatar" />
+                                    <div class="medium-s">Diana Yin • AI Product Management</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-blocks">
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0)"
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0)"
                             class="testimonial-block-wrapper fourth-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
@@ -3068,18 +3272,16 @@
                                             src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
                                             loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
                                     </div>
-                                    <div class="medium-m block-description medium-width text-opacity">Ayan not only
-                                        prepares you for technical rounds but also helps you handle HR interviews with
-                                        the right mindset and approach.</div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan is a talented data professional who consistently delivers high-quality work. His expertise in data pipelines, warehousing, and analytics makes him a valuable asset to any team.</div>
                                 </div>
                                 <div class="name-wrapper"><img
-                                        src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb790c8ab85eb093b4fcd_Person%20Image%201.avif"
-                                        loading="lazy" width="Auto" height="Auto" alt="Neha P." class="image avatar" />
-                                    <div class="medium-s">Neha P. • Data Engineer</div>
+                                        src="src/Testimonials/Matti.png"
+                                        loading="lazy" width="Auto" height="Auto" alt="Matti Kakkori" class="image avatar" />
+                                    <div class="medium-s">Matti Kakkori • AI Product</div>
                                 </div>
                             </div>
                         </div>
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0)"
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0)"
                             class="testimonial-block-wrapper fifth-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
@@ -3099,16 +3301,12 @@
                                             src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
                                             loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
                                     </div>
-                                    <div class="medium-m block-description medium-width text-opacity">The mock
-                                        interviews, feedback, and real-world insights I received from Ayan were
-                                        game-changers. Highly recommend for anyone serious about their data career.
-                                    </div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan brings exceptional expertise in data warehousing and visualization, paired with a strong work ethic and collaborative mindset. His mentoring ability and commitment to excellence make him an invaluable asset to any team.</div>
                                 </div>
                                 <div class="name-wrapper"><img
-                                        src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb7905f1978cc2c28de11_Inessa%20J..avif"
-                                        loading="lazy" width="Auto" height="Auto" alt="Ananya S."
-                                        class="image avatar" />
-                                    <div class="medium-s">Ananya S. • Analytics Engineer</div>
+                                        src="src/Testimonials/Anton.png"
+                                        loading="lazy" width="Auto" height="Auto" alt="Anton Sakharov" class="image avatar" />
+                                    <div class="medium-s">Anton Sakharov • Senior Big Data Engineer</div>
                                 </div>
                             </div>
                         </div>

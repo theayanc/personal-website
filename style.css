@@ -3618,12 +3618,16 @@ ul, ol {
   margin-right: -30px;
   padding-top: 80px;
   transform: rotate(-10deg);
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-block-wrapper.second-block {
   margin-left: -30px;
   margin-right: -35px;
   transform: rotate(10deg);
+  position: relative;
+  z-index: 3;
 }
 
 .testimonial-block-wrapper.third-block {
@@ -3636,11 +3640,15 @@ ul, ol {
   margin-right: -41px;
   padding-top: 40px;
   transform: rotate(-5deg);
+  position: relative;
+  z-index: 2;
 }
 
 .testimonial-block-wrapper.fifth-block {
   margin-left: -41px;
   transform: rotate(5deg);
+  position: relative;
+  z-index: 1;
 }
 
 .rating {
@@ -4646,7 +4654,7 @@ ul, ol {
   }
 
   .testimonial-block-wrapper.first-block {
-    display: none;
+    display: flex;
   }
 
   .testimonial-block-wrapper.second-block {
@@ -4815,7 +4823,7 @@ ul, ol {
   }
 
   .hero {
-    padding-top: 144px;
+    padding-top: 96px;
   }
 
   .hero-content {
@@ -5131,29 +5139,41 @@ ul, ol {
     flex-flow: column;
     justify-content: flex-start;
     align-items: stretch;
-    margin-bottom: -60px;
+    margin-bottom: 0 !important;
+  }
+
+  .testimonial-block-wrapper.first-block {
+    display: flex !important;
+    margin: 0 0 16px !important;
+    transform: none !important;
+    padding-top: 0 !important;
   }
 
   .testimonial-block-wrapper.second-block {
-    margin-bottom: -140px;
-    margin-right: 0;
-    display: flex;
+    margin-bottom: 16px !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    transform: none !important;
+    padding-top: 0 !important;
   }
 
   .testimonial-block-wrapper.third-block {
-    margin-left: 0;
-    display: flex;
+    display: none !important;
   }
 
   .testimonial-block-wrapper.fourth-block {
-    margin-right: 0;
-    padding-top: 0;
-    display: flex;
-    transform: rotate(10deg);
+    margin-right: 0 !important;
+    margin-bottom: 16px !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    transform: none !important;
   }
 
   .testimonial-block-wrapper.fifth-block {
-    display: none;
+    display: flex !important;
+    margin: 0 !important;
+    transform: none !important;
+    padding-top: 0 !important;
   }
 
   .testimonial-block {
@@ -5555,8 +5575,16 @@ ul, ol {
     order: 3;
     width: 100% !important;
     max-width: 280px !important;
-    margin: 0 auto 32px !important;
+    margin: 32px auto 32px !important;
     display: block !important;
+  }
+
+  .hero-vp-list {
+    order: 4;
+    margin-top: 16px !important;
+    margin-bottom: 24px !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
   }
 
   /* Reverting to the premium design of the expertise blocks */
