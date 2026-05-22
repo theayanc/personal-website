@@ -3905,7 +3905,7 @@ ul, ol {
   grid-row-gap: 16px;
   flex-direction: column;
   width: 100%;
-  max-width: 560px;
+  max-width: 800px;
   display: flex;
 }
 
@@ -3921,7 +3921,7 @@ ul, ol {
   -webkit-user-select: none;
   user-select: none;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: center;
   width: 100%;
   padding: 8px 8px 8px 32px;
   display: flex;
@@ -3940,6 +3940,7 @@ ul, ol {
 
 .faq-button-wrapper {
   flex-flow: column;
+  justify-content: center;
   display: flex;
 }
 
