@@ -2635,6 +2635,8 @@ ul, ol {
 
 .image.ticker-image {
   height: 64px;
+  width: 140px;
+  object-fit: contain;
 }
 
 .image.avatar {
