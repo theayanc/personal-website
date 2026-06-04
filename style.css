@@ -2429,7 +2429,7 @@ ul, ol {
 
 .medium-s.faq-answer-text {
   color: var(--black-opacity--65);
-  max-width: 400px;
+  max-width: 640px;
 }
 
 .medium-s.block-description {
