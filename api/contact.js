@@ -14,8 +14,8 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // Using the provided API key
-        'Authorization': `Bearer re_JmqWedkA_HprEi76BdCWpCeny4fKJRaA3`
+        // Using the API key from environment variables
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
       },
       body: JSON.stringify({
         // Resend requires a verified domain to send from, otherwise you can only use their onboarding test email 
