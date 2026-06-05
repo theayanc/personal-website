@@ -513,9 +513,14 @@
         }
 
         /* Mobile-only About Me heading */
-        .am-mobile-heading { display: none; }
+        .am-mobile-heading {
+            display: none;
+        }
+
         @media (max-width: 767px) {
-            #Instructor { padding-top: 20px !important; }
+            #Instructor {
+                padding-top: 20px !important;
+            }
         }
 
         /* ── About Me (Instructor) section ── */
@@ -541,13 +546,13 @@
         /* Map card */
         .am-map-card {
             background: #fff;
-            border: 1px solid rgba(0,0,0,0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 20px;
             padding: 32px 28px 24px;
             display: flex;
             flex-direction: column;
             gap: 20px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
         }
 
         .am-map-heading {
@@ -602,7 +607,7 @@
             border-radius: 50%;
             background: #2563eb;
             border: 2px solid #fff;
-            box-shadow: 0 0 0 2px rgba(37,99,235,0.3), 0 2px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
             position: relative;
             z-index: 2;
         }
@@ -615,28 +620,35 @@
             width: 22px;
             height: 22px;
             border-radius: 50%;
-            background: rgba(37,99,235,0.2);
+            background: rgba(37, 99, 235, 0.2);
             animation: pin-pulse 2s ease-out infinite;
             z-index: 1;
         }
 
         @keyframes pin-pulse {
-            0%   { transform: translate(-50%,-50%) scale(0.5); opacity: 0.8; }
-            100% { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(2.2);
+                opacity: 0;
+            }
         }
 
         .am-pin-label {
-            background: rgba(255,255,255,0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
-            border: 1px solid rgba(37,99,235,0.15);
+            border: 1px solid rgba(37, 99, 235, 0.15);
             border-radius: 6px;
             padding: 3px 8px;
             font-size: 10.5px;
             font-weight: 700;
             color: #1e40af;
             white-space: nowrap;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
             letter-spacing: 0.1px;
         }
 
@@ -653,7 +665,7 @@
             gap: 5px;
             padding: 5px 12px;
             background: #f8faff;
-            border: 1px solid rgba(37,99,235,0.15);
+            border: 1px solid rgba(37, 99, 235, 0.15);
             border-radius: 999px;
             font-size: 12px;
             font-weight: 600;
@@ -668,9 +680,9 @@
             margin-top: 32px;
             padding: 28px 40px;
             background: #fff;
-            border: 1px solid rgba(0,0,0,0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 20px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         }
 
         .am-stat-item {
@@ -698,7 +710,7 @@
         .am-stat-divider {
             width: 1px;
             height: 40px;
-            background: rgba(0,0,0,0.09);
+            background: rgba(0, 0, 0, 0.09);
             margin: 0 16px;
         }
 
@@ -708,12 +720,14 @@
             align-items: flex-start;
             gap: 0;
         }
+
         .am-exp-block {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 6px;
         }
+
         .am-exp-tag {
             font-size: 10px;
             font-weight: 700;
@@ -721,29 +735,37 @@
             text-transform: uppercase;
             color: #94a3b8;
         }
+
         .am-exp-value {
             font-size: 14px;
             font-weight: 700;
             color: #0f172a;
             line-height: 1.35;
         }
+
         .am-exp-divider {
             width: 1px;
-            background: rgba(0,0,0,0.09);
+            background: rgba(0, 0, 0, 0.09);
             align-self: stretch;
             margin: 0 20px;
         }
 
         /* Mobile */
         @media (max-width: 767px) {
-            .am-mobile-heading { display: block; margin-bottom: 20px; }
+            .am-mobile-heading {
+                display: block;
+                margin-bottom: 20px;
+            }
+
             .am-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
+
             .am-profile-card {
                 min-height: 380px;
             }
+
             /* No bleed on mobile — map sits naturally */
             .am-map-wrapper {
                 margin-bottom: -40px;
@@ -753,6 +775,7 @@
                 min-height: 200px;
                 max-height: 260px;
             }
+
             /* Remove fade mask on mobile */
             .am-map-img {
                 -webkit-mask-image: none;
@@ -760,21 +783,26 @@
                 margin-top: -5%;
                 margin-bottom: -18%;
             }
+
             /* Smaller person-info card on mobile */
             .am-person-info {
                 padding: 14px 16px 14px !important;
                 gap: 10px !important;
             }
+
             .am-person-info .medium-l {
                 font-size: 15px !important;
             }
+
             .am-person-info .medium-s {
                 font-size: 12px !important;
             }
+
             .am-person-info .social-button {
                 width: 32px !important;
                 height: 32px !important;
             }
+
             .am-person-info .social-button-icon {
                 width: 14px !important;
                 height: 14px !important;
@@ -785,68 +813,68 @@
             .am-profile-card {
                 min-height: 320px;
             }
+
             .am-map-wrapper {
                 min-height: 160px;
                 max-height: 220px;
             }
         }
-
     </style>
 
     <style>
-    @media (max-width: 767px) {
-        .testimonial-blocks-wrapper {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 16px !important;
-            padding: 8px 0 0 !important;
-            align-items: stretch !important;
-        }
+        @media (max-width: 767px) {
+            .testimonial-blocks-wrapper {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
+                padding: 8px 0 0 !important;
+                align-items: stretch !important;
+            }
 
-        .testimonial-blocks {
-            display: contents !important;
-        }
+            .testimonial-blocks {
+                display: contents !important;
+            }
 
-        .testimonial-block-wrapper {
-            transform: none !important;
-            -webkit-transform: none !important;
-            width: 100% !important;
-            opacity: 0;
-            transform: translateY(32px) !important;
-            transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1) !important;
-        }
+            .testimonial-block-wrapper {
+                transform: none !important;
+                -webkit-transform: none !important;
+                width: 100% !important;
+                opacity: 0;
+                transform: translateY(32px) !important;
+                transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) !important;
+            }
 
-        .testimonial-block-wrapper.t-visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
+            .testimonial-block-wrapper.t-visible {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
 
-        .testimonial-block {
-            box-shadow: 0 2px 20px rgba(0,0,0,0.07) !important;
-            border-radius: 16px !important;
+            .testimonial-block {
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07) !important;
+                border-radius: 16px !important;
+            }
         }
-    }
     </style>
 
     <script>
-    (function(){
-        if(window.innerWidth > 767) return;
-        function initT() {
-            var cards = document.querySelectorAll('.testimonial-block-wrapper');
-            if(!cards.length) return;
-            var io = new IntersectionObserver(function(entries){
-                entries.forEach(function(e, i){
-                    if(e.isIntersecting){
-                        setTimeout(function(){ e.target.classList.add('t-visible'); }, 80);
-                        io.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-            cards.forEach(function(c){ io.observe(c); });
-        }
-        if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initT);
-        else initT();
-    })();
+        (function () {
+            if (window.innerWidth > 767) return;
+            function initT() {
+                var cards = document.querySelectorAll('.testimonial-block-wrapper');
+                if (!cards.length) return;
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e, i) {
+                        if (e.isIntersecting) {
+                            setTimeout(function () { e.target.classList.add('t-visible'); }, 80);
+                            io.unobserve(e.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                cards.forEach(function (c) { io.observe(c); });
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initT);
+            else initT();
+        })();
     </script>
 </head>
 
@@ -891,47 +919,61 @@
                 <div class="hero-offer">
                     <div class="hero-text-wrapper">
                         <h1 style="-webkit-transform:translate3d(0, 16px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 16px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 16px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 16px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(6px);opacity:0"
-                            class="h1 hero-h1">Helping You Think Like an Architect. Solve Complex Problems. <span style="color:#2563eb;">Deliver Impact.</span></h1>
+                            class="h1 hero-h1">Helping You Think Like an Architect. Solve Complex Problems. <span
+                                style="color:#2563eb;">Deliver Impact.</span></h1>
                         <p style="-webkit-transform:translate3d(0, 8px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 8px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 8px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 8px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(3px);opacity:0;"
-                            class="medium-l section-description hero-description">I'm Ayan Chakraborty, Data Architect &amp; Consultant with 14+ years of experience designing scalable data systems and solving business problems the right way.</p>
+                            class="medium-l section-description hero-description">I'm Ayan Chakraborty, Data Architect
+                            &amp; Consultant with 14+ years of experience designing scalable data systems and solving
+                            business problems the right way.</p>
 
                         <!-- 3 compact value props -->
                         <div class="hero-vp-list">
                             <div class="hero-vp-item">
                                 <div class="hero-vp-icon-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                                     </svg>
                                 </div>
                                 <div class="hero-vp-text">
                                     <div class="hero-vp-title">I Solve Complex Problems in Simple, Scalable Ways</div>
-                                    <div class="hero-vp-sub">I work with enterprises and startups to design modern data architectures that drive performance, efficiency, and growth.</div>
+                                    <div class="hero-vp-sub">I work with enterprises and startups to design modern data
+                                        architectures that drive performance, efficiency, and growth.</div>
                                 </div>
                             </div>
                             <div class="hero-vp-item">
                                 <div class="hero-vp-icon-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                        <circle cx="9" cy="7" r="4"/>
-                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                                     </svg>
                                 </div>
                                 <div class="hero-vp-text">
                                     <div class="hero-vp-title">I Lead & Build Data Teams</div>
-                                    <div class="hero-vp-sub">I guide and scale high-performing engineering teams to deliver complex, production-ready enterprise data solutions.</div>
+                                    <div class="hero-vp-sub">I guide and scale high-performing engineering teams to
+                                        deliver complex, production-ready enterprise data solutions.</div>
                                 </div>
                             </div>
                             <div class="hero-vp-item">
                                 <div class="hero-vp-icon-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M23 6l-9.5 9.5-5-5L1 18"/>
-                                        <polyline points="17 6 23 6 23 12"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M23 6l-9.5 9.5-5-5L1 18" />
+                                        <polyline points="17 6 23 6 23 12" />
                                     </svg>
                                 </div>
                                 <div class="hero-vp-text">
-                                    <div class="hero-vp-title">I help enterprises with data architecture, data security, and AI implementation.</div>
-                                    <div class="hero-vp-sub">From secure data foundations to cutting-edge AI integrations — I architect scalable solutions that drive enterprise innovation and performance.</div>
+                                    <div class="hero-vp-title">I help enterprises with data architecture, data security,
+                                        and AI implementation.</div>
+                                    <div class="hero-vp-sub">From secure data foundations to cutting-edge AI
+                                        integrations — I architect scalable solutions that drive enterprise innovation
+                                        and performance.</div>
                                 </div>
                             </div>
                         </div>
@@ -994,7 +1036,7 @@
             </div>
         </div>
     </section>
-<br><br><br><br>
+    <br><br><br><br>
     <section id="System" class="section bottom-padding" style="padding-top: 60px; padding-bottom: 120px;">
         <div class="w-layout-blockcontainer container without-padding w-container">
             <style>
@@ -1055,12 +1097,35 @@
                 }
 
                 /* Per-card accent color tokens */
-                .ent-card:nth-child(1) { --ac: #6366f1; --as: rgba(99,102,241,0.09); }
-                .ent-card:nth-child(2) { --ac: #0d9488; --as: rgba(13,148,136,0.09); }
-                .ent-card:nth-child(3) { --ac: #8b5cf6; --as: rgba(139,92,246,0.09); }
-                .ent-card:nth-child(4) { --ac: #f59e0b; --as: rgba(245,158,11,0.09); }
-                .ent-card:nth-child(5) { --ac: #f43f5e; --as: rgba(244,63,94,0.09); }
-                .ent-card:nth-child(6) { --ac: #0ea5e9; --as: rgba(14,165,233,0.09); }
+                .ent-card:nth-child(1) {
+                    --ac: #6366f1;
+                    --as: rgba(99, 102, 241, 0.09);
+                }
+
+                .ent-card:nth-child(2) {
+                    --ac: #0d9488;
+                    --as: rgba(13, 148, 136, 0.09);
+                }
+
+                .ent-card:nth-child(3) {
+                    --ac: #8b5cf6;
+                    --as: rgba(139, 92, 246, 0.09);
+                }
+
+                .ent-card:nth-child(4) {
+                    --ac: #f59e0b;
+                    --as: rgba(245, 158, 11, 0.09);
+                }
+
+                .ent-card:nth-child(5) {
+                    --ac: #f43f5e;
+                    --as: rgba(244, 63, 94, 0.09);
+                }
+
+                .ent-card:nth-child(6) {
+                    --ac: #0ea5e9;
+                    --as: rgba(14, 165, 233, 0.09);
+                }
 
                 .ent-card {
                     flex: 0 0 calc(33.333% - 16px);
@@ -1069,20 +1134,22 @@
                     border-radius: 24px;
                     padding: 36px 32px 40px;
                     box-shadow:
-                        0 0 0 1px rgba(0,0,0,0.04),
-                        0 2px 6px rgba(0,0,0,0.03),
-                        0 10px 28px rgba(0,0,0,0.05);
+                        0 0 0 1px rgba(0, 0, 0, 0.04),
+                        0 2px 6px rgba(0, 0, 0, 0.03),
+                        0 10px 28px rgba(0, 0, 0, 0.05);
                     text-align: left;
                     position: relative;
                     overflow: hidden;
                     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
                 }
 
                 .ent-card::after {
                     content: '';
                     position: absolute;
-                    top: 0; left: 0; right: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
                     height: 3px;
                     border-radius: 24px 24px 0 0;
                     background: var(--ac, #6366f1);
@@ -1093,10 +1160,10 @@
                 .ent-card:hover {
                     transform: translateY(-6px);
                     box-shadow:
-                        0 0 0 1px rgba(0,0,0,0.04),
-                        0 4px 12px rgba(0,0,0,0.04),
-                        0 20px 48px rgba(0,0,0,0.07),
-                        0 40px 80px rgba(0,0,0,0.03);
+                        0 0 0 1px rgba(0, 0, 0, 0.04),
+                        0 4px 12px rgba(0, 0, 0, 0.04),
+                        0 20px 48px rgba(0, 0, 0, 0.07),
+                        0 40px 80px rgba(0, 0, 0, 0.03);
                 }
 
                 .ent-card:hover::after {
@@ -1106,7 +1173,7 @@
                 .ent-card-ico {
                     width: 52px;
                     height: 52px;
-                    background: var(--as, rgba(99,102,241,0.09));
+                    background: var(--as, rgba(99, 102, 241, 0.09));
                     color: var(--ac, #6366f1);
                     border-radius: 15px;
                     display: flex;
@@ -1142,14 +1209,14 @@
                     right: 24px;
                     font-size: 40px;
                     font-weight: 900;
-                    color: rgba(0,0,0,0.04);
+                    color: rgba(0, 0, 0, 0.04);
                     letter-spacing: -2px;
                     line-height: 1;
                     transition: color 0.35s ease;
                 }
 
                 .ent-card:hover .ent-card-num {
-                    color: var(--as, rgba(99,102,241,0.12));
+                    color: var(--as, rgba(99, 102, 241, 0.12));
                 }
 
                 /* ── Marquee Strip ── */
@@ -1186,8 +1253,13 @@
                 }
 
                 @keyframes ent-marquee {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(-50%); }
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    100% {
+                        transform: translateX(-50%);
+                    }
                 }
 
                 .ent-marquee-pill {
@@ -1232,9 +1304,9 @@
                     border-radius: 24px;
                     padding: 30px 24px 28px;
                     box-shadow:
-                        0 0 0 1px rgba(0,0,0,0.04),
-                        0 2px 6px rgba(0,0,0,0.03),
-                        0 10px 28px rgba(0,0,0,0.05);
+                        0 0 0 1px rgba(0, 0, 0, 0.04),
+                        0 2px 6px rgba(0, 0, 0, 0.03),
+                        0 10px 28px rgba(0, 0, 0, 0.05);
                     display: flex;
                     flex-direction: column;
                     gap: 18px;
@@ -1246,35 +1318,72 @@
                 .ent-impact-card:hover {
                     transform: translateY(-6px);
                     box-shadow:
-                        0 0 0 1px rgba(0,0,0,0.04),
-                        0 4px 12px rgba(0,0,0,0.04),
-                        0 20px 48px rgba(0,0,0,0.07),
-                        0 40px 80px rgba(0,0,0,0.03);
+                        0 0 0 1px rgba(0, 0, 0, 0.04),
+                        0 4px 12px rgba(0, 0, 0, 0.04),
+                        0 20px 48px rgba(0, 0, 0, 0.07),
+                        0 40px 80px rgba(0, 0, 0, 0.03);
                 }
 
                 .ent-impact-card::after {
                     content: '';
                     position: absolute;
-                    top: 0; left: 0; right: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
                     height: 3px;
                     border-radius: 24px 24px 0 0;
                     opacity: 0;
                     transition: opacity 0.3s ease;
                 }
 
-                .ent-impact-card:nth-child(1) .ent-impact-ico { background: rgba(16, 185, 129, 0.1); color: #10b981; }
-                .ent-impact-card:nth-child(2) .ent-impact-ico { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
-                .ent-impact-card:nth-child(3) .ent-impact-ico { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
-                .ent-impact-card:nth-child(4) .ent-impact-ico { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
-                .ent-impact-card:nth-child(5) .ent-impact-ico { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+                .ent-impact-card:nth-child(1) .ent-impact-ico {
+                    background: rgba(16, 185, 129, 0.1);
+                    color: #10b981;
+                }
 
-                .ent-impact-card:nth-child(1)::after { background: linear-gradient(90deg, #10b981, #34d399); }
-                .ent-impact-card:nth-child(2)::after { background: linear-gradient(90deg, #2563eb, #60a5fa); }
-                .ent-impact-card:nth-child(3)::after { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-                .ent-impact-card:nth-child(4)::after { background: linear-gradient(90deg, #f59e0b, #fcd34d); }
-                .ent-impact-card:nth-child(5)::after { background: linear-gradient(90deg, #ec4899, #f9a8d4); }
+                .ent-impact-card:nth-child(2) .ent-impact-ico {
+                    background: rgba(37, 99, 235, 0.1);
+                    color: #2563eb;
+                }
 
-                .ent-impact-card:hover::after { opacity: 1; }
+                .ent-impact-card:nth-child(3) .ent-impact-ico {
+                    background: rgba(139, 92, 246, 0.1);
+                    color: #8b5cf6;
+                }
+
+                .ent-impact-card:nth-child(4) .ent-impact-ico {
+                    background: rgba(245, 158, 11, 0.1);
+                    color: #f59e0b;
+                }
+
+                .ent-impact-card:nth-child(5) .ent-impact-ico {
+                    background: rgba(236, 72, 153, 0.1);
+                    color: #ec4899;
+                }
+
+                .ent-impact-card:nth-child(1)::after {
+                    background: linear-gradient(90deg, #10b981, #34d399);
+                }
+
+                .ent-impact-card:nth-child(2)::after {
+                    background: linear-gradient(90deg, #2563eb, #60a5fa);
+                }
+
+                .ent-impact-card:nth-child(3)::after {
+                    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+                }
+
+                .ent-impact-card:nth-child(4)::after {
+                    background: linear-gradient(90deg, #f59e0b, #fcd34d);
+                }
+
+                .ent-impact-card:nth-child(5)::after {
+                    background: linear-gradient(90deg, #ec4899, #f9a8d4);
+                }
+
+                .ent-impact-card:hover::after {
+                    opacity: 1;
+                }
 
                 .ent-impact-ico {
                     width: 48px;
@@ -1325,8 +1434,13 @@
                 }
 
                 @keyframes ent-aurora-slide {
-                    0%   { background-position: 0% 50%; }
-                    100% { background-position: 300% 50%; }
+                    0% {
+                        background-position: 0% 50%;
+                    }
+
+                    100% {
+                        background-position: 300% 50%;
+                    }
                 }
 
                 .ent-status-pill {
@@ -1344,17 +1458,25 @@
                 }
 
                 .ent-status-dot {
-                    width: 7px; height: 7px;
+                    width: 7px;
+                    height: 7px;
                     border-radius: 50%;
                     background: #10b981;
-                    box-shadow: 0 0 0 3px rgba(16,185,129,0.2);
+                    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
                     flex-shrink: 0;
                     animation: ent-pulse-green 2.2s ease-in-out infinite;
                 }
 
                 @keyframes ent-pulse-green {
-                    0%, 100% { box-shadow: 0 0 0 3px rgba(16,185,129,0.2); }
-                    50%      { box-shadow: 0 0 0 7px rgba(16,185,129,0.06); }
+
+                    0%,
+                    100% {
+                        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+                    }
+
+                    50% {
+                        box-shadow: 0 0 0 7px rgba(16, 185, 129, 0.06);
+                    }
                 }
 
                 /* CTA heading */
@@ -1392,8 +1514,8 @@
                     align-items: center;
                     gap: 8px;
                     box-shadow:
-                        0 1px 2px rgba(0,0,0,0.18),
-                        0 4px 16px rgba(15,23,42,0.14);
+                        0 1px 2px rgba(0, 0, 0, 0.18),
+                        0 4px 16px rgba(15, 23, 42, 0.14);
                     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
                 }
 
@@ -1401,12 +1523,14 @@
                 .ent-btn-dark::after {
                     content: '';
                     position: absolute;
-                    top: 0; left: -100%;
-                    width: 60%; height: 100%;
+                    top: 0;
+                    left: -100%;
+                    width: 60%;
+                    height: 100%;
                     background: linear-gradient(90deg,
-                        transparent,
-                        rgba(255,255,255,0.13),
-                        transparent);
+                            transparent,
+                            rgba(255, 255, 255, 0.13),
+                            transparent);
                     transition: left 0.55s ease;
                 }
 
@@ -1415,11 +1539,13 @@
                     color: #fff;
                     transform: translateY(-2px);
                     box-shadow:
-                        0 1px 2px rgba(0,0,0,0.18),
-                        0 10px 28px rgba(15,23,42,0.2);
+                        0 1px 2px rgba(0, 0, 0, 0.18),
+                        0 10px 28px rgba(15, 23, 42, 0.2);
                 }
 
-                .ent-btn-dark:hover::after { left: 150%; }
+                .ent-btn-dark:hover::after {
+                    left: 150%;
+                }
 
                 .ent-btn-arrow {
                     display: inline-block;
@@ -1427,9 +1553,13 @@
                     font-style: normal;
                 }
 
-                .ent-btn-dark:hover .ent-btn-arrow { transform: translateX(4px); }
+                .ent-btn-dark:hover .ent-btn-arrow {
+                    transform: translateX(4px);
+                }
 
-                .ent-btn-dark:active { transform: translateY(0); }
+                .ent-btn-dark:active {
+                    transform: translateY(0);
+                }
 
                 /* Secondary ghost button */
                 .ent-btn-light {
@@ -1451,10 +1581,12 @@
                     border-color: #94a3b8;
                     color: #0f172a;
                     transform: translateY(-2px);
-                    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
                 }
 
-                .ent-btn-light:active { transform: translateY(0); }
+                .ent-btn-light:active {
+                    transform: translateY(0);
+                }
 
                 @media (max-width: 991px) {
                     .ent-section {
@@ -1517,17 +1649,30 @@
                         padding: 44px 24px 40px;
                     }
                 }
+
                 @media (max-width: 767px) {
-                    .ent-footer { display: none !important; }
-                    .ent-section { padding-bottom: 0 !important; }
-                    #System { padding-bottom: 20px !important; }
+                    .ent-footer {
+                        display: none !important;
+                    }
+
+                    .ent-section {
+                        padding-bottom: 0 !important;
+                    }
+
+                    #System {
+                        padding-bottom: 20px !important;
+                    }
                 }
             </style>
 
             <div class="ent-section">
                 <div class="ent-header">
-                    <h2 class="h2 section-heading align-center" style="margin-bottom: 20px; max-width: 1000px; margin-left: auto; margin-right: auto; font-size: clamp(28px, 4vw, 44px); line-height: 1.25;">Enterprise Solutions. Real Impact.<br>Data Consulting That <span style="color: #2563eb;">Delivers.</span></h2>
-                    <p>I partner with enterprises and industries to solve complex data challenges, drive efficiency, and create measurable business value.</p>
+                    <h2 class="h2 section-heading align-center"
+                        style="margin-bottom: 20px; max-width: 1000px; margin-left: auto; margin-right: auto; font-size: clamp(28px, 4vw, 44px); line-height: 1.25;">
+                        Enterprise Solutions. Real Impact.<br>Data Consulting That <span
+                            style="color: #2563eb;">Delivers.</span></h2>
+                    <p>I partner with enterprises and industries to solve complex data challenges, drive efficiency, and
+                        create measurable business value.</p>
                 </div>
 
                 <div class="ent-cards-wrapper">
@@ -1568,7 +1713,8 @@
                             </svg>
                         </div>
                         <h4>Enterprise AI Implementation</h4>
-                        <p>Build robust data foundations and deploy scalable, production-ready AI and ML pipelines to drive innovation.</p>
+                        <p>Build robust data foundations and deploy scalable, production-ready AI and ML pipelines to
+                            drive innovation.</p>
                         <span class="ent-card-num">03</span>
                     </div>
                     <div class="ent-card">
@@ -1581,7 +1727,8 @@
                             </svg>
                         </div>
                         <h4>Data Security & Governance</h4>
-                        <p>Implement robust security policies, compliance standards, and governance frameworks to protect enterprise data assets.</p>
+                        <p>Implement robust security policies, compliance standards, and governance frameworks to
+                            protect enterprise data assets.</p>
                         <span class="ent-card-num">04</span>
                     </div>
                     <div class="ent-card">
@@ -1619,68 +1766,148 @@
                         <div class="ent-marquee-track">
                             <!-- Set 1 -->
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="10" width="4" height="10"/><rect x="10" y="10" width="4" height="10"/><rect x="16" y="10" width="4" height="10"/><path d="M2 22h20"/><path d="M12 2L2 8h20L12 2z"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <rect x="4" y="10" width="4" height="10" />
+                                    <rect x="10" y="10" width="4" height="10" />
+                                    <rect x="16" y="10" width="4" height="10" />
+                                    <path d="M2 22h20" />
+                                    <path d="M12 2L2 8h20L12 2z" />
+                                </svg>
                                 <span>Banking & Finance</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <circle cx="9" cy="21" r="1" />
+                                    <circle cx="20" cy="21" r="1" />
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                </svg>
                                 <span>Retail & E-commerce</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
                                 <span>Healthcare & Life Sciences</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M13 18h1"/><path d="M9 18h1"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path
+                                        d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+                                    <path d="M17 18h1" />
+                                    <path d="M13 18h1" />
+                                    <path d="M9 18h1" />
+                                </svg>
                                 <span>Manufacturing & Supply Chain</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                                </svg>
                                 <span>Technology & SaaS</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <circle cx="12" cy="12" r="2" />
+                                    <path
+                                        d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
+                                </svg>
                                 <span>Telecom & Media</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                    <path d="M2 12l10 5 10-5" />
+                                </svg>
                                 <span>Energy & Utilities</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                </svg>
                                 <span>Education & EdTech</span>
                             </div>
                             <!-- Set 2 (duplicate for seamless loop) -->
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="10" width="4" height="10"/><rect x="10" y="10" width="4" height="10"/><rect x="16" y="10" width="4" height="10"/><path d="M2 22h20"/><path d="M12 2L2 8h20L12 2z"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <rect x="4" y="10" width="4" height="10" />
+                                    <rect x="10" y="10" width="4" height="10" />
+                                    <rect x="16" y="10" width="4" height="10" />
+                                    <path d="M2 22h20" />
+                                    <path d="M12 2L2 8h20L12 2z" />
+                                </svg>
                                 <span>Banking & Finance</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <circle cx="9" cy="21" r="1" />
+                                    <circle cx="20" cy="21" r="1" />
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                </svg>
                                 <span>Retail & E-commerce</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
                                 <span>Healthcare & Life Sciences</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M13 18h1"/><path d="M9 18h1"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path
+                                        d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+                                    <path d="M17 18h1" />
+                                    <path d="M13 18h1" />
+                                    <path d="M9 18h1" />
+                                </svg>
                                 <span>Manufacturing & Supply Chain</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                                </svg>
                                 <span>Technology & SaaS</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <circle cx="12" cy="12" r="2" />
+                                    <path
+                                        d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
+                                </svg>
                                 <span>Telecom & Media</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                    <path d="M2 12l10 5 10-5" />
+                                </svg>
                                 <span>Energy & Utilities</span>
                             </div>
                             <div class="ent-marquee-pill">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                </svg>
                                 <span>Education & EdTech</span>
                             </div>
                         </div>
@@ -1691,34 +1918,54 @@
                 <div class="ent-impact-row">
                     <div class="ent-impact-card">
                         <div class="ent-impact-ico">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+                                <path d="M12 18V6" />
+                            </svg>
                         </div>
                         <div class="ent-impact-body">
                             <p class="ent-impact-title">Lower Costs</p>
-                            <p class="ent-impact-desc">Optimize infrastructure and resources to reduce cloud overhead.</p>
+                            <p class="ent-impact-desc">Optimize infrastructure and resources to reduce cloud overhead.
+                            </p>
                         </div>
                     </div>
                     <div class="ent-impact-card">
                         <div class="ent-impact-ico">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                <polyline points="16 7 22 7 22 13" />
+                            </svg>
                         </div>
                         <div class="ent-impact-body">
                             <p class="ent-impact-title">Faster Decisions</p>
-                            <p class="ent-impact-desc">Real-time telemetry and clean dashboards to accelerate insight.</p>
+                            <p class="ent-impact-desc">Real-time telemetry and clean dashboards to accelerate insight.
+                            </p>
                         </div>
                     </div>
                     <div class="ent-impact-card">
                         <div class="ent-impact-ico">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
                         </div>
                         <div class="ent-impact-body">
                             <p class="ent-impact-title">Risk Management</p>
-                            <p class="ent-impact-desc">Proactive compliance and governance frameworks that protect data.</p>
+                            <p class="ent-impact-desc">Proactive compliance and governance frameworks that protect data.
+                            </p>
                         </div>
                     </div>
                     <div class="ent-impact-card">
                         <div class="ent-impact-ico">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
                         </div>
                         <div class="ent-impact-body">
                             <p class="ent-impact-title">Higher Efficiency</p>
@@ -1727,20 +1974,27 @@
                     </div>
                     <div class="ent-impact-card">
                         <div class="ent-impact-ico">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
                         </div>
                         <div class="ent-impact-body">
                             <p class="ent-impact-title">Stronger Growth</p>
-                            <p class="ent-impact-desc">Unlock new opportunities using predictive models and telemetry.</p>
+                            <p class="ent-impact-desc">Unlock new opportunities using predictive models and telemetry.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-    
-                </div>
+
+            </div>
         </div>
     </section>
-<!-- ═══════════════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════════════
          ROADMAP SECTION — "How I Actually Help"
          ═══════════════════════════════════════════════════════════ -->
     <section id="Approach" class="rdmp2-section" style="padding-bottom: 60px;">
@@ -2420,7 +2674,8 @@
                 <h2 class="h2 rdmp2-h2">How I Actually <span style="color:#2563eb;">Help</span></h2>
 
                 <p class="rdmp2-sub">Your complete Data Engineering Roadmap</p>
-                <p class="rdmp2-tagline">A structured, battle-tested career blueprint mapping every transition, technology, and milestone from entry-level developer to elite data architect.</p>
+                <p class="rdmp2-tagline">A structured, battle-tested career blueprint mapping every transition,
+                    technology, and milestone from entry-level developer to elite data architect.</p>
 
                 <div class="rdmp2-divider">
                     <span class="rdmp2-div-line"></span>
@@ -3141,11 +3396,11 @@
         </script>
 
     </section>
-                
+
     <section class="section" style="padding-top: 60px; padding-bottom: 80px; background: #fafafa;">
         <div class="w-layout-blockcontainer container w-container">
             <div class="ent-section">
-<div class="ent-footer">
+                <div class="ent-footer">
                     <div class="ent-cta-card">
                         <div class="ent-status-pill">
                             <span class="ent-status-dot"></span>
@@ -3170,12 +3425,15 @@
         </div>
     </section>
     <br><br>
-    <section id="Instructor" class="section bottom-padding" style="padding-top: 40px; padding-bottom: 120px; background: #fafafa;">
+    <section id="Instructor" class="section bottom-padding"
+        style="padding-top: 40px; padding-bottom: 120px; background: #fafafa;">
         <div class="w-layout-blockcontainer container w-container">
 
             <!-- Mobile-only section heading -->
             <div class="am-mobile-heading">
-                <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;">About Me</div>
+                <div
+                    style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;">
+                    About Me</div>
             </div>
 
             <!-- 2-col main grid -->
@@ -3191,11 +3449,13 @@
                             <div class="medium-s text-opacity">Data Architect • Databricks • Snowflake • AWS</div>
                         </div>
                         <div class="horizontal-content">
-                            <a href="https://www.linkedin.com/in/ayanchakraborty-data/" target="_blank" class="social-button w-inline-block"><img
+                            <a href="https://www.linkedin.com/in/ayanchakraborty-data/" target="_blank"
+                                class="social-button w-inline-block"><img
                                     src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79ff3846f1282dd774a_LinkedIn.svg"
                                     loading="lazy" width="Auto" height="Auto" alt=""
                                     class="icon social-button-icon" /></a>
-                            <a href="https://www.youtube.com/@ayanchakraborty-data" target="_blank" class="social-button w-inline-block"><img
+                            <a href="https://www.youtube.com/@ayanchakraborty-data" target="_blank"
+                                class="social-button w-inline-block"><img
                                     src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79f5e17e97f5ea9f62f_YouTube.svg"
                                     loading="lazy" width="Auto" height="Auto" alt=""
                                     class="icon social-button-icon" /></a>
@@ -3212,7 +3472,11 @@
                             <div class="block-text-wrapper small-gap">
                                 <div class="medium-s text-opacity">About me</div>
                                 <h2 class="h2 h2-small">Architect by craft. Mentor by choice.</h2>
-                            <p class="medium-m" style="color:#64748b; font-size:14.5px; line-height:1.65; margin:10px 0 0;">With 14+ years building petabyte-scale systems for global enterprises, I train you to master the engineering mindset behind production-level data architecture —not just the tools.</p>
+                                <p class="medium-m"
+                                    style="color:#64748b; font-size:14.5px; line-height:1.65; margin:10px 0 0;">With 14+
+                                    years building petabyte-scale systems for global enterprises, I train you to master
+                                    the engineering mindset behind production-level data architecture —not just the
+                                    tools.</p>
                             </div>
                             <!-- World map -->
                             <div class="am-map-wrapper" style="margin-top:4px;">
@@ -3244,15 +3508,51 @@
                     <div class="collaborations">
                         <div class="medium-s text-opacity">Brands I have worked with</div>
                         <div class="ticker">
-                            <div class="ticker-line"><img src="src/Brands/Acronym.png" loading="lazy" width="Auto" height="Auto" alt="Acronym" class="image ticker-image" /><img src="src/Brands/Alef.png" loading="lazy" width="Auto" height="Auto" alt="Alef" class="image ticker-image" /><img src="src/Brands/Brightly.png" loading="lazy" width="Auto" height="Auto" alt="Brightly" class="image ticker-image" /><img src="src/Brands/Cognizant.png" loading="lazy" width="Auto" height="Auto" alt="Cognizant" class="image ticker-image" /><img src="src/Brands/IPG.png" loading="lazy" width="Auto" height="Auto" alt="IPG" class="image ticker-image" /><img src="src/Brands/Lotlinx.png" loading="lazy" width="Auto" height="Auto" alt="Lotlinx" class="image ticker-image" /><img src="src/Brands/NetZoom.png" loading="lazy" width="Auto" height="Auto" alt="NetZoom" class="image ticker-image" /><img src="src/Brands/Nous.png" loading="lazy" width="Auto" height="Auto" alt="Nous" class="image ticker-image" /><img src="src/Brands/Pepsico.png" loading="lazy" width="Auto" height="Auto" alt="Pepsico" class="image ticker-image" /><img src="src/Brands/Shega.png" loading="lazy" width="Auto" height="Auto" alt="Shega" class="image ticker-image" /><img src="src/Brands/Solaris.png" loading="lazy" width="Auto" height="Auto" alt="Solaris" class="image ticker-image" /><img src="src/Brands/Yara.png" loading="lazy" width="Auto" height="Auto" alt="Yara" class="image ticker-image" /></div>
-                            <div class="ticker-line"><img src="src/Brands/Acronym.png" loading="lazy" width="Auto" height="Auto" alt="Acronym" class="image ticker-image" /><img src="src/Brands/Alef.png" loading="lazy" width="Auto" height="Auto" alt="Alef" class="image ticker-image" /><img src="src/Brands/Brightly.png" loading="lazy" width="Auto" height="Auto" alt="Brightly" class="image ticker-image" /><img src="src/Brands/Cognizant.png" loading="lazy" width="Auto" height="Auto" alt="Cognizant" class="image ticker-image" /><img src="src/Brands/IPG.png" loading="lazy" width="Auto" height="Auto" alt="IPG" class="image ticker-image" /><img src="src/Brands/Lotlinx.png" loading="lazy" width="Auto" height="Auto" alt="Lotlinx" class="image ticker-image" /><img src="src/Brands/NetZoom.png" loading="lazy" width="Auto" height="Auto" alt="NetZoom" class="image ticker-image" /><img src="src/Brands/Nous.png" loading="lazy" width="Auto" height="Auto" alt="Nous" class="image ticker-image" /><img src="src/Brands/Pepsico.png" loading="lazy" width="Auto" height="Auto" alt="Pepsico" class="image ticker-image" /><img src="src/Brands/Shega.png" loading="lazy" width="Auto" height="Auto" alt="Shega" class="image ticker-image" /><img src="src/Brands/Solaris.png" loading="lazy" width="Auto" height="Auto" alt="Solaris" class="image ticker-image" /><img src="src/Brands/Yara.png" loading="lazy" width="Auto" height="Auto" alt="Yara" class="image ticker-image" /></div>
+                            <div class="ticker-line"><img src="src/Brands/Acronym.png" loading="lazy" width="Auto"
+                                    height="Auto" alt="Acronym" class="image ticker-image" /><img
+                                    src="src/Brands/Alef.png" loading="lazy" width="Auto" height="Auto" alt="Alef"
+                                    class="image ticker-image" /><img src="src/Brands/Brightly.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Brightly" class="image ticker-image" /><img
+                                    src="src/Brands/Cognizant.png" loading="lazy" width="Auto" height="Auto"
+                                    alt="Cognizant" class="image ticker-image" /><img src="src/Brands/IPG.png"
+                                    loading="lazy" width="Auto" height="Auto" alt="IPG"
+                                    class="image ticker-image" /><img src="src/Brands/Lotlinx.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Lotlinx" class="image ticker-image" /><img
+                                    src="src/Brands/NetZoom.png" loading="lazy" width="Auto" height="Auto" alt="NetZoom"
+                                    class="image ticker-image" /><img src="src/Brands/Nous.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Nous" class="image ticker-image" /><img
+                                    src="src/Brands/Pepsico.png" loading="lazy" width="Auto" height="Auto" alt="Pepsico"
+                                    class="image ticker-image" /><img src="src/Brands/Shega.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Shega" class="image ticker-image" /><img
+                                    src="src/Brands/Solaris.png" loading="lazy" width="Auto" height="Auto" alt="Solaris"
+                                    class="image ticker-image" /><img src="src/Brands/Yara.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Yara" class="image ticker-image" /></div>
+                            <div class="ticker-line"><img src="src/Brands/Acronym.png" loading="lazy" width="Auto"
+                                    height="Auto" alt="Acronym" class="image ticker-image" /><img
+                                    src="src/Brands/Alef.png" loading="lazy" width="Auto" height="Auto" alt="Alef"
+                                    class="image ticker-image" /><img src="src/Brands/Brightly.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Brightly" class="image ticker-image" /><img
+                                    src="src/Brands/Cognizant.png" loading="lazy" width="Auto" height="Auto"
+                                    alt="Cognizant" class="image ticker-image" /><img src="src/Brands/IPG.png"
+                                    loading="lazy" width="Auto" height="Auto" alt="IPG"
+                                    class="image ticker-image" /><img src="src/Brands/Lotlinx.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Lotlinx" class="image ticker-image" /><img
+                                    src="src/Brands/NetZoom.png" loading="lazy" width="Auto" height="Auto" alt="NetZoom"
+                                    class="image ticker-image" /><img src="src/Brands/Nous.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Nous" class="image ticker-image" /><img
+                                    src="src/Brands/Pepsico.png" loading="lazy" width="Auto" height="Auto" alt="Pepsico"
+                                    class="image ticker-image" /><img src="src/Brands/Shega.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Shega" class="image ticker-image" /><img
+                                    src="src/Brands/Solaris.png" loading="lazy" width="Auto" height="Auto" alt="Solaris"
+                                    class="image ticker-image" /><img src="src/Brands/Yara.png" loading="lazy"
+                                    width="Auto" height="Auto" alt="Yara" class="image ticker-image" /></div>
                             <div class="overlay ticker-overlay left"></div>
                             <div class="overlay ticker-overlay right"></div>
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
+        </div>
 
         </div>
     </section>
@@ -3260,64 +3560,166 @@
     <section id="Testimonials" class="section bottom-padding" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="w-layout-blockcontainer container w-container">
             <div class="section-content align-center">
-                <h2 class="h2 section-heading align-center">See what my colleagues &amp; leaders <span style="color:#2563eb;">say</span></h2>
+                <h2 class="h2 section-heading align-center">See what my colleagues &amp; leaders <span
+                        style="color:#2563eb;">say</span></h2>
                 <div data-w-id="97daf75a-bbd1-52a5-31e9-eb35f97cade2" class="testimonial-blocks-wrapper">
-                    <img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb797d50d60981d8efc42_Scribble%201.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon scribble testimonial-first" />
-                    <img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79721f9d47dbb7c9d81_Scribble%205.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon scribble testimonial-second" />
+                    <img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb797d50d60981d8efc42_Scribble%201.svg"
+                        loading="lazy" width="Auto" height="Auto" alt="" class="icon scribble testimonial-first" />
+                    <img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bb79721f9d47dbb7c9d81_Scribble%205.svg"
+                        loading="lazy" width="Auto" height="Auto" alt="" class="icon scribble testimonial-second" />
                     <div class="testimonial-blocks first-blocks">
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)" class="testimonial-block-wrapper first-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)"
+                            class="testimonial-block-wrapper first-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
-                                    <div class="medium-m block-description medium-width text-opacity">Ayan consistently demonstrated strong technical expertise, ownership, and architectural thinking. His ability to design scalable, reliable data solutions made him a key contributor to project success.</div>
+                                    <div class="rating"><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
+                                    </div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan consistently
+                                        demonstrated strong technical expertise, ownership, and architectural thinking.
+                                        His ability to design scalable, reliable data solutions made him a key
+                                        contributor to project success.</div>
                                 </div>
-                                <div class="name-wrapper"><img src="src/Testimonials/Debarishi.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
+                                <div class="name-wrapper"><img src="src/Testimonials/Debarishi.png" loading="lazy"
+                                        width="Auto" height="Auto" alt="" class="image avatar" />
                                     <div class="medium-s">Debarshi Dutta • Managing Director, Data &amp; AI</div>
                                 </div>
                             </div>
                         </div>
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0)" class="testimonial-block-wrapper second-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-10deg) skew(0, 0)"
+                            class="testimonial-block-wrapper second-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
-                                    <div class="medium-m block-description medium-width text-opacity">Ayan combines deep expertise in data ecosystems with exceptional collaboration and leadership. Reliable, adaptable, and always willing to mentor others.</div>
+                                    <div class="rating"><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
+                                    </div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan combines deep
+                                        expertise in data ecosystems with exceptional collaboration and leadership.
+                                        Reliable, adaptable, and always willing to mentor others.</div>
                                 </div>
-                                <div class="name-wrapper"><img src="src/Testimonials/Diana.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
+                                <div class="name-wrapper"><img src="src/Testimonials/Diana.png" loading="lazy"
+                                        width="Auto" height="Auto" alt="" class="image avatar" />
                                     <div class="medium-s">Diana Yin • AI Product Management</div>
                                 </div>
                             </div>
                         </div>
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)" class="testimonial-block-wrapper third-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)"
+                            class="testimonial-block-wrapper third-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
-                                    <div class="medium-m block-description medium-width text-opacity">Ayan is a talented data professional who consistently delivers high-quality work. His expertise in data pipelines, warehousing, and analytics makes him a valuable asset to any team.</div>
+                                    <div class="rating"><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
+                                    </div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan is a talented
+                                        data professional who consistently delivers high-quality work. His expertise in
+                                        data pipelines, warehousing, and analytics makes him a valuable asset to any
+                                        team.</div>
                                 </div>
-                                <div class="name-wrapper"><img src="src/Testimonials/Matti.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
+                                <div class="name-wrapper"><img src="src/Testimonials/Matti.png" loading="lazy"
+                                        width="Auto" height="Auto" alt="" class="image avatar" />
                                     <div class="medium-s">Matti Kakkori • AI Product</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-blocks">
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0)" class="testimonial-block-wrapper fourth-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(5deg) skew(0, 0)"
+                            class="testimonial-block-wrapper fourth-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
-                                    <div class="medium-m block-description medium-width text-opacity">Ayan brings exceptional expertise in data warehousing and visualization, paired with a strong work ethic and collaborative mindset. His mentoring ability and commitment to excellence make him an invaluable asset to any team.</div>
+                                    <div class="rating"><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
+                                    </div>
+                                    <div class="medium-m block-description medium-width text-opacity">Ayan brings
+                                        exceptional expertise in data warehousing and visualization, paired with a
+                                        strong work ethic and collaborative mindset. His mentoring ability and
+                                        commitment to excellence make him an invaluable asset to any team.</div>
                                 </div>
-                                <div class="name-wrapper"><img src="src/Testimonials/Anton.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
+                                <div class="name-wrapper"><img src="src/Testimonials/Anton.png" loading="lazy"
+                                        width="Auto" height="Auto" alt="" class="image avatar" />
                                     <div class="medium-s">Anton Sakharov • Senior Big Data Engineer</div>
                                 </div>
                             </div>
                         </div>
-                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0)" class="testimonial-block-wrapper fifth-block">
+                        <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0)"
+                            class="testimonial-block-wrapper fifth-block">
                             <div class="testimonial-block">
                                 <div class="block-content-wrapper">
-                                    <div class="rating"><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /><img src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg" loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" /></div>
-                                    <div class="medium-m block-description medium-width text-opacity">Working with Ayan was a genuine pleasure. He brings clarity to complex data challenges and elevates the entire team with his depth of knowledge and collaborative energy.</div>
+                                    <div class="rating"><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt=""
+                                            class="icon rating-icon" /><img
+                                            src="https://cdn.prod.website-files.com/694ba75ca8333c7e1ac8998c/694bc5b350845982c0d07706_Star.svg"
+                                            loading="lazy" width="Auto" height="Auto" alt="" class="icon rating-icon" />
+                                    </div>
+                                    <div class="medium-m block-description medium-width text-opacity">Working with Ayan
+                                        was a genuine pleasure. He brings clarity to complex data challenges and
+                                        elevates the entire team with his depth of knowledge and collaborative energy.
+                                    </div>
                                 </div>
-                                <div class="name-wrapper"><img src="src/Testimonials/Vishwatosh.png" loading="lazy" width="Auto" height="Auto" alt="" class="image avatar" />
+                                <div class="name-wrapper"><img src="src/Testimonials/Vishwatosh.png" loading="lazy"
+                                        width="Auto" height="Auto" alt="" class="image avatar" />
                                     <div class="medium-s">Vishwatosh Tripathi</div>
                                 </div>
                             </div>
@@ -3328,7 +3730,7 @@
         </div>
     </section>
 
-        <section id="FAQ" class="section bottom-padding" style="padding-top: 120px; padding-bottom: 120px;">
+    <section id="FAQ" class="section bottom-padding" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="w-layout-blockcontainer container w-container">
             <div class="section-content align-center">
                 <h2 class="h2 section-heading align-center">Common <span style="color:#2563eb;">questions</span></h2>
@@ -3337,7 +3739,9 @@
                         <div class="block-text-wrapper faq-text-wrapper">
                             <p class="medium-m">What type of companies do you work with?</p>
                             <div class="faq-answer">
-                                <p class="medium-s faq-answer-text">I partner with enterprises looking to scale their data architecture, startups building from the ground up, and companies seeking to optimize their cloud data costs and operational efficiency.</p>
+                                <p class="medium-s faq-answer-text">I partner with enterprises looking to scale their
+                                    data architecture, startups building from the ground up, and companies seeking to
+                                    optimize their cloud data costs and operational efficiency.</p>
                             </div>
                         </div>
                         <div class="faq-button-wrapper">
@@ -3350,7 +3754,9 @@
                         <div class="block-text-wrapper faq-text-wrapper">
                             <p class="medium-m">What are your core areas of expertise?</p>
                             <div class="faq-answer">
-                                <p class="medium-s faq-answer-text">My expertise spans Cloud Data Engineering, Data Architecture, Modern Data Stack implementations, Cost Optimization, and building robust, scalable data platforms.</p>
+                                <p class="medium-s faq-answer-text">My expertise spans Cloud Data Engineering, Data
+                                    Architecture, Modern Data Stack implementations, Cost Optimization, and building
+                                    robust, scalable data platforms.</p>
                             </div>
                         </div>
                         <div class="faq-button-wrapper">
@@ -3363,7 +3769,9 @@
                         <div class="block-text-wrapper faq-text-wrapper">
                             <p class="medium-m">Do you provide end-to-end implementation or just consulting?</p>
                             <div class="faq-answer">
-                                <p class="medium-s faq-answer-text">Both. Depending on the engagement, I can act as an advisory Fractional Data Architect or work hands-on with your team to deliver end-to-end implementations.</p>
+                                <p class="medium-s faq-answer-text">Both. Depending on the engagement, I can act as an
+                                    advisory Fractional Data Architect or work hands-on with your team to deliver
+                                    end-to-end implementations.</p>
                             </div>
                         </div>
                         <div class="faq-button-wrapper">
@@ -3376,7 +3784,9 @@
                         <div class="block-text-wrapper faq-text-wrapper">
                             <p class="medium-m">How can you help reduce cloud data costs?</p>
                             <div class="faq-answer">
-                                <p class="medium-s faq-answer-text">I analyze your current architecture and pipelines to identify inefficiencies, optimize compute and storage usage, implement better data modeling, and introduce performance tuning to significantly cut costs.</p>
+                                <p class="medium-s faq-answer-text">I analyze your current architecture and pipelines to
+                                    identify inefficiencies, optimize compute and storage usage, implement better data
+                                    modeling, and introduce performance tuning to significantly cut costs.</p>
                             </div>
                         </div>
                         <div class="faq-button-wrapper">
@@ -3389,7 +3799,9 @@
                         <div class="block-text-wrapper faq-text-wrapper">
                             <p class="medium-m">Do you offer training or upskilling for corporate teams?</p>
                             <div class="faq-answer">
-                                <p class="medium-s faq-answer-text">Yes, I provide corporate training and mentorship for engineering teams, helping them build strong fundamentals, adopt architectural thinking, and elevate their capabilities to maintain the systems we build.</p>
+                                <p class="medium-s faq-answer-text">Yes, I provide corporate training and mentorship for
+                                    engineering teams, helping them build strong fundamentals, adopt architectural
+                                    thinking, and elevate their capabilities to maintain the systems we build.</p>
                             </div>
                         </div>
                         <div class="faq-button-wrapper">
@@ -3421,19 +3833,21 @@
                             <div class="medium-s">Let's Work Together</div>
                         </div>
                     </div>
-                    <h2 class="h2 section-heading align-center">Future-Proof Your <span style="color:#2563eb;">Data Infrastructure.</span></h2>
+                    <h2 class="h2 section-heading align-center">Future-Proof Your <span style="color:#2563eb;">Data
+                            Infrastructure.</span></h2>
                 </div>
                 <div class="banner-info">
                     <div class="section-description-wrapper align-center">
-                        <div class="medium-l section-description">Partner with a Principal Architect to build high-performance, petabyte-scale systems.</div>
+                        <div class="medium-l section-description">Partner with a Principal Architect to build
+                            high-performance, petabyte-scale systems.</div>
                         <div data-w-id="ae89a26a-c3ce-20e9-81a1-cc4eb02cce73"
                             style="-webkit-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 12px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
                             class="buttons-wrapper">
                             <a data-wf--button--variant="primary" href="contact.html" class="button w-inline-block">
                                 <div class="medium-s">Book a Consultation</div>
                             </a>
-                            <a data-wf--button--variant="secondary"
-                                href="https://linkedin.com/in/ayanchakraborty-data" target="_blank"
+                            <a data-wf--button--variant="secondary" href="https://linkedin.com/in/ayanchakraborty-data"
+                                target="_blank"
                                 class="button w-variant-17481090-6e7a-ed7f-6187-23cc278bdcd6 w-inline-block">
                                 <div class="medium-s">Connect on LinkedIn</div>
                             </a>
@@ -3452,7 +3866,8 @@
                             <a href="#hero" class="full-logo w-inline-block">
                                 <div class="medium-l">Ayan Chakraborty</div>
                             </a>
-                            <p class="medium-s block-description">Architecting petabyte-scale data infrastructure for global enterprises.</p>
+                            <p class="medium-s block-description">Architecting petabyte-scale data infrastructure for
+                                global enterprises.</p>
                         </div>
                         <div class="footer-menu">
                             <div class="menu-block">
