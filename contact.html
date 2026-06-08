@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,19 +13,30 @@
         WebFont.load({ google: { families: ["Geist:500,600,700,800"] } });
     </script>
     <script type="text/javascript">
-        !function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);
+        !function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);
     </script>
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a1a1a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-weight='700' font-size='38' fill='white'%3EA%3C/text%3E%3Ccircle cx='47' cy='48' r='5' fill='%232563eb'/%3E%3C/svg%3E" />
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body {
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
             font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #fff;
             color: #111;
             -webkit-font-smoothing: antialiased;
         }
-        body { padding-top: 96px; }
+
+        body {
+            padding-top: 96px;
+        }
 
         /* ── SPLIT LAYOUT ── */
         .cf-section {
@@ -39,14 +51,18 @@
         }
 
         /* ── LEFT ── */
-        .cf-left { display: flex; flex-direction: column; gap: 0; }
+        .cf-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
 
         .cf-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
             padding: 6px 14px;
-            border: 1.5px solid rgba(37,99,235,0.3);
+            border: 1.5px solid rgba(37, 99, 235, 0.3);
             border-radius: 100px;
             font-size: 12px;
             font-weight: 600;
@@ -54,10 +70,12 @@
             width: fit-content;
             margin-bottom: 28px;
             letter-spacing: 0.01em;
-            background: rgba(37,99,235,0.05);
+            background: rgba(37, 99, 235, 0.05);
         }
+
         .cf-badge-dot {
-            width: 7px; height: 7px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: #2563eb;
         }
@@ -70,6 +88,7 @@
             line-height: 1.02;
             margin-bottom: 20px;
         }
+
         .cf-sub {
             font-size: 15px;
             color: #888;
@@ -83,11 +102,14 @@
             align-items: center;
             gap: 12px;
         }
+
         .cf-avatars {
             display: flex;
         }
+
         .cf-avatar {
-            width: 32px; height: 32px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             border: 2px solid #fff;
             background: #e2e8f0;
@@ -95,33 +117,65 @@
             overflow: hidden;
             flex-shrink: 0;
         }
+
         .cf-avatar img {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
-        .cf-avatars .cf-avatar:first-child { margin-left: 0; }
-        .cf-avatars { align-items: center; }
-        .cf-proof-text { display: flex; flex-direction: column; gap: 2px; }
-        .cf-stars { display: flex; gap: 1px; }
-        .cf-proof-label { font-size: 12px; color: #888; font-weight: 500; }
+
+        .cf-avatars .cf-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .cf-avatars {
+            align-items: center;
+        }
+
+        .cf-proof-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .cf-stars {
+            display: flex;
+            gap: 1px;
+        }
+
+        .cf-proof-label {
+            font-size: 12px;
+            color: #888;
+            font-weight: 500;
+        }
 
         /* ── RIGHT / FORM ── */
-        .cf-right { display: flex; flex-direction: column; gap: 0; }
+        .cf-right {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
 
-        .cf-form { display: flex; flex-direction: column; gap: 0; }
+        .cf-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
 
         /* Underline inputs */
         .cf-field {
-            border-bottom: 1px solid rgba(0,0,0,0.14);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.14);
             padding: 18px 0 14px;
             transition: border-color 0.18s;
         }
+
         .cf-field:focus-within {
             border-color: #2563eb;
         }
 
-        .cf-input, .cf-textarea {
+        .cf-input,
+        .cf-textarea {
             width: 100%;
             background: transparent;
             border: none;
@@ -131,9 +185,12 @@
             color: #111;
             font-weight: 400;
         }
-        .cf-input::placeholder, .cf-textarea::placeholder {
+
+        .cf-input::placeholder,
+        .cf-textarea::placeholder {
             color: #999;
         }
+
         .cf-textarea {
             resize: none;
             height: 72px;
@@ -143,28 +200,31 @@
         /* Chip group fields */
         .cf-chip-field {
             padding: 18px 0 16px;
-            border-bottom: 1px solid rgba(0,0,0,0.14);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.14);
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
+
         .cf-chip-label {
             font-size: 14px;
             color: #444;
             font-weight: 500;
         }
+
         .cf-chips {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
+
         .cf-chip {
             display: flex;
             align-items: center;
             gap: 6px;
             padding: 7px 14px;
             border-radius: 100px;
-            border: 1.5px solid rgba(0,0,0,0.16);
+            border: 1.5px solid rgba(0, 0, 0, 0.16);
             font-size: 13px;
             font-weight: 500;
             color: #444;
@@ -173,15 +233,25 @@
             user-select: none;
             background: transparent;
         }
-        .cf-chip:hover { border-color: #111; color: #111; }
-        .cf-chip input[type="radio"] { display: none; }
+
+        .cf-chip:hover {
+            border-color: #111;
+            color: #111;
+        }
+
+        .cf-chip input[type="radio"] {
+            display: none;
+        }
+
         .cf-chip.is-selected {
             background: #2563eb;
             border-color: #2563eb;
             color: #fff;
         }
+
         .cf-chip-dot {
-            width: 7px; height: 7px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: currentColor;
             opacity: 0.6;
@@ -189,7 +259,10 @@
         }
 
         /* Submit */
-        .cf-submit-wrap { margin-top: 28px; }
+        .cf-submit-wrap {
+            margin-top: 28px;
+        }
+
         .cf-submit {
             background: #111;
             color: #fff;
@@ -208,9 +281,22 @@
             letter-spacing: 0.01em;
             transition: opacity 0.2s, transform 0.2s;
         }
-        .cf-submit:hover { opacity: 0.85; transform: translateY(-1px); }
-        .cf-submit:active { transform: translateY(0); opacity: 1; }
-        .cf-submit:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+        .cf-submit:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        .cf-submit:active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .cf-submit:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
 
         .cf-disclaimer {
             margin-top: 14px;
@@ -218,30 +304,76 @@
             color: #aaa;
             text-align: center;
         }
-        .cf-disclaimer a { color: #888; text-decoration: underline; }
+
+        .cf-disclaimer a {
+            color: #888;
+            text-decoration: underline;
+        }
 
         /* ── SUCCESS ── */
         .cf-success {
-            display: none; text-align: center; padding: 40px 0;
+            display: none;
+            text-align: center;
+            padding: 40px 0;
         }
+
         .cf-success-icon {
-            width: 64px; height: 64px; border-radius: 50%;
-            background: rgba(0,0,0,0.05);
-            border: 1.5px solid rgba(0,0,0,0.12);
-            display: flex; align-items: center; justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1.5px solid rgba(0, 0, 0, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto 20px;
-            animation: cf-pop 0.4s cubic-bezier(0.22,1,0.36,1) both;
+            animation: cf-pop 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
         }
-        @keyframes cf-pop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        .cf-success-title { font-size: 26px; font-weight: 800; color: #111; letter-spacing: -0.04em; margin-bottom: 8px; }
-        .cf-success-sub { font-size: 14px; color: #888; line-height: 1.65; margin-bottom: 28px; }
+
+        @keyframes cf-pop {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .cf-success-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #111;
+            letter-spacing: -0.04em;
+            margin-bottom: 8px;
+        }
+
+        .cf-success-sub {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.65;
+            margin-bottom: 28px;
+        }
+
         .cf-home-link {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 12px 28px; background: #111; color: #fff;
-            border-radius: 100px; font-size: 13px; font-weight: 700;
-            text-decoration: none; transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 28px;
+            background: #111;
+            color: #fff;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: opacity 0.2s;
         }
-        .cf-home-link:hover { opacity: 0.8; }
+
+        .cf-home-link:hover {
+            opacity: 0.8;
+        }
 
 
         /* ── RESPONSIVE ── */
@@ -251,18 +383,28 @@
                 padding: 48px 32px 64px;
                 gap: 48px;
             }
-            .cf-heading { font-size: clamp(40px, 10vw, 56px); }
-            .cf-sub { max-width: 100%; }
+
+            .cf-heading {
+                font-size: clamp(40px, 10vw, 56px);
+            }
+
+            .cf-sub {
+                max-width: 100%;
+            }
         }
+
         @media (max-width: 480px) {
-            .cf-section { padding: 40px 20px 56px; }
+            .cf-section {
+                padding: 40px 20px 56px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<!-- NAV (same as main site) -->
-<nav data-wf--nav--variant="default" class="nav">
+    <!-- NAV (same as main site) -->
+    <nav data-wf--nav--variant="default" class="nav">
         <div class="nav-content">
             <div class="nav-main"><a href="index.html" aria-current="page" class="mini-logo w-inline-block w--current"
                     style="background: none; color: inherit; font-size: 22px; font-weight: 700; font-family: 'Geist', sans-serif; letter-spacing: -0.5px; text-decoration: none; line-height: 1;">
@@ -276,13 +418,16 @@
             <div data-w-id="f2b59133-f467-81b9-87e6-a1e892f5713c" class="nav-menu">
                 <div class="menu-items-wrapper">
                     <div class="menu-items">
-                        <a data-wf--menu-item--variant="nav" href="index.html#Approach" class="menu-item w-inline-block">
+                        <a data-wf--menu-item--variant="nav" href="index.html#Approach"
+                            class="menu-item w-inline-block">
                             <div class="medium-s">Approach</div>
                         </a>
-                        <a data-wf--menu-item--variant="nav" href="index.html#Instructor" class="menu-item w-inline-block">
+                        <a data-wf--menu-item--variant="nav" href="index.html#Instructor"
+                            class="menu-item w-inline-block">
                             <div class="medium-s">About</div>
                         </a>
-                        <a data-wf--menu-item--variant="nav" href="index.html#Testimonials" class="menu-item w-inline-block">
+                        <a data-wf--menu-item--variant="nav" href="index.html#Testimonials"
+                            class="menu-item w-inline-block">
                             <div class="medium-s">Testimonials</div>
                         </a>
                         <a data-wf--menu-item--variant="nav" href="index.html#FAQ" class="menu-item w-inline-block">
@@ -297,113 +442,140 @@
         </div>
     </nav>
 
-<!-- FORM -->
-<section class="cf-section">
+    <!-- FORM -->
+    <section class="cf-section">
 
-    <!-- LEFT -->
-    <div class="cf-left">
-        <div class="cf-badge">
-            <span class="cf-badge-dot"></span>
-            Work with Ayan
-        </div>
-        <h1 class="cf-heading">Start the<br>conversation.</h1>
-        <p class="cf-sub">Whether you're building data infrastructure at scale or preparing for your next big role — Ayan works directly with you. No middlemen.</p>
-
-        <div class="cf-social-proof">
-            <div class="cf-avatars">
-                <div class="cf-avatar"><img src="src/Testimonials/Debarishi.png" alt="Debarishi" /></div>
-                <div class="cf-avatar"><img src="src/Testimonials/Diana.png" alt="Diana" /></div>
-                <div class="cf-avatar"><img src="src/Testimonials/Matti.png" alt="Matti" /></div>
-                <div class="cf-avatar"><img src="src/Testimonials/Anton.png" alt="Anton" /></div>
+        <!-- LEFT -->
+        <div class="cf-left">
+            <div class="cf-badge">
+                <span class="cf-badge-dot"></span>
+                Work with Ayan
             </div>
-            <div class="cf-proof-text">
-                <div class="cf-stars">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <h1 class="cf-heading">Start the<br>conversation.</h1>
+            <p class="cf-sub">Whether you're scaling enterprise data infrastructure or growing as a technical leader, you get Ayan, directly. 14+ years of expertise. No filters.</p>
+
+            <div class="cf-social-proof">
+                <div class="cf-avatars">
+                    <div class="cf-avatar"><img src="src/Testimonials/Debarishi.png" alt="Debarishi" /></div>
+                    <div class="cf-avatar"><img src="src/Testimonials/Diana.png" alt="Diana" /></div>
+                    <div class="cf-avatar"><img src="src/Testimonials/Matti.png" alt="Matti" /></div>
+                    <div class="cf-avatar"><img src="src/Testimonials/Anton.png" alt="Anton" /></div>
                 </div>
-                <div class="cf-proof-label">Trusted by engineers &amp; enterprise teams</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="cf-right">
-        <form class="cf-form" id="cfForm" action="/api/contact" method="POST">
-
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-
-            <div class="cf-field">
-                <input class="cf-input" type="text" name="name" placeholder="Name *" required />
-            </div>
-
-            <div class="cf-field">
-                <input class="cf-input" type="email" name="email" placeholder="Email *" required />
-            </div>
-
-            <div class="cf-chip-field">
-                <div class="cf-chip-label">What brings you here?</div>
-                <div class="cf-chips" id="serviceChips">
-                    <label class="cf-chip is-selected">
-                        <input type="radio" name="service" value="architecture" checked />
-                        <span class="cf-chip-dot"></span>Data Architecture
-                    </label>
-                    <label class="cf-chip">
-                        <input type="radio" name="service" value="ai" />
-                        <span class="cf-chip-dot"></span>AI Implementation
-                    </label>
-                    <label class="cf-chip">
-                        <input type="radio" name="service" value="performance" />
-                        <span class="cf-chip-dot"></span>Performance Optimization
-                    </label>
-                    <label class="cf-chip">
-                        <input type="radio" name="service" value="cost" />
-                        <span class="cf-chip-dot"></span>Cost Optimization
-                    </label>
-                    <label class="cf-chip">
-                        <input type="radio" name="service" value="enterprise" />
-                        <span class="cf-chip-dot"></span>Enterprise Consulting
-                    </label>
-                    <label class="cf-chip">
-                        <input type="radio" name="service" value="training" />
-                        <span class="cf-chip-dot"></span>Corporate Training
-                    </label>
+                <div class="cf-proof-text">
+                    <div class="cf-stars">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#2563eb">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <div class="cf-proof-label">Trusted by engineers &amp; enterprise teams</div>
                 </div>
             </div>
-
-            <div class="cf-field" style="border-bottom:1px solid rgba(0,0,0,0.14);">
-                <textarea class="cf-textarea" name="message" placeholder="Tell me what you're trying to achieve... *" required></textarea>
-            </div>
-
-            <div class="cf-submit-wrap">
-                <button type="submit" class="cf-submit" id="cfBtn">
-                    Send Message
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </button>
-                <p class="cf-disclaimer">All inquiries and project details are kept strictly confidential.</p>
-            </div>
-
-        </form>
-
-        <div class="cf-success" id="cfSuccess">
-            <div class="cf-success-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div class="cf-success-title">Message sent.</div>
-            <div class="cf-success-sub">Ayan will get back to you within 24 hours.</div>
-            <a href="index.html" class="cf-home-link">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                Back to home
-            </a>
         </div>
-    </div>
 
-</section>
+        <!-- RIGHT -->
+        <div class="cf-right">
+            <form class="cf-form" id="cfForm" action="/api/contact" method="POST">
 
-<!-- FOOTER (same as main site) -->
-<footer data-wf--footer--variant="default" class="footer">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+                <div class="cf-field">
+                    <input class="cf-input" type="text" name="name" placeholder="Name *" required />
+                </div>
+
+                <div class="cf-field">
+                    <input class="cf-input" type="email" name="email" placeholder="Email *" required />
+                </div>
+
+                <div class="cf-chip-field">
+                    <div class="cf-chip-label">What brings you here?</div>
+                    <div class="cf-chips" id="serviceChips">
+                        <label class="cf-chip is-selected">
+                            <input type="radio" name="service" value="architecture" checked />
+                            <span class="cf-chip-dot"></span>Data Architecture
+                        </label>
+                        <label class="cf-chip">
+                            <input type="radio" name="service" value="ai" />
+                            <span class="cf-chip-dot"></span>AI Implementation
+                        </label>
+                        <label class="cf-chip">
+                            <input type="radio" name="service" value="performance" />
+                            <span class="cf-chip-dot"></span>Performance Optimization
+                        </label>
+                        <label class="cf-chip">
+                            <input type="radio" name="service" value="cost" />
+                            <span class="cf-chip-dot"></span>Cost Optimization
+                        </label>
+                        <label class="cf-chip">
+                            <input type="radio" name="service" value="enterprise" />
+                            <span class="cf-chip-dot"></span>Enterprise Consulting
+                        </label>
+                        <label class="cf-chip">
+                            <input type="radio" name="service" value="training" />
+                            <span class="cf-chip-dot"></span>Corporate Training
+                        </label>
+                    </div>
+                </div>
+
+                <div class="cf-field" style="border-bottom:1px solid rgba(0,0,0,0.14);">
+                    <textarea class="cf-textarea" name="message"
+                        placeholder="Tell me what you're trying to achieve... *" required></textarea>
+                </div>
+
+                <div class="cf-submit-wrap">
+                    <button type="submit" class="cf-submit" id="cfBtn">
+                        Send Message
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                    </button>
+                    <p class="cf-disclaimer">All inquiries and project details are kept strictly confidential.</p>
+                </div>
+
+            </form>
+
+            <div class="cf-success" id="cfSuccess">
+                <div class="cf-success-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5"
+                        stroke-linecap="round">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                </div>
+                <div class="cf-success-title">Message sent.</div>
+                <div class="cf-success-sub">Ayan will get back to you within 24 hours.</div>
+                <a href="index.html" class="cf-home-link">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <line x1="19" y1="12" x2="5" y2="12" />
+                        <polyline points="12 19 5 12 12 5" />
+                    </svg>
+                    Back to home
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER (same as main site) -->
+    <footer data-wf--footer--variant="default" class="footer">
         <div class="w-layout-blockcontainer container w-container">
             <div class="footer-content">
                 <div id="w-node-_2336b4fe-8faa-c644-b957-5b2070b7116e-70b7116b" class="footer-info">
@@ -412,7 +584,8 @@
                             <a href="index.html#hero" class="full-logo w-inline-block">
                                 <div class="medium-l">Ayan Chakraborty</div>
                             </a>
-                            <p class="medium-s block-description">Architecting petabyte-scale data infrastructure for global enterprises.</p>
+                            <p class="medium-s block-description">Architecting petabyte-scale data infrastructure for
+                                global enterprises.</p>
                         </div>
                         <div class="footer-menu">
                             <div class="menu-block">
@@ -472,50 +645,82 @@
         </div>
     </footer>
 
-<script>
-(function(){
-    // Chip selection
-    document.querySelectorAll('#serviceChips .cf-chip').forEach(function(chip){
-        chip.addEventListener('click', function(){
-            document.querySelectorAll('#serviceChips .cf-chip').forEach(function(c){ c.classList.remove('is-selected'); });
-            chip.classList.add('is-selected');
-        });
-    });
+    <script>
+        (function () {
+            // Chip selection
+            document.querySelectorAll('#serviceChips .cf-chip').forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    document.querySelectorAll('#serviceChips .cf-chip').forEach(function (c) { c.classList.remove('is-selected'); });
+                    chip.classList.add('is-selected');
+                });
+            });
 
-    // Form submit
-    var form = document.getElementById('cfForm');
-    var btn  = document.getElementById('cfBtn');
-    if(!form) return;
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
-        
-        var formData = new FormData(form);
-        var data = {};
-        formData.forEach(function(value, key){ data[key] = value; });
+            // Form submit
+            var form = document.getElementById('cfForm');
+            var btn = document.getElementById('cfBtn');
+            if (!form) return;
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
 
-        fetch(form.action, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json' 
-            }
-        })
-        .then(function(r){
-            if(r.ok){
-                form.style.display = 'none';
-                document.getElementById('cfSuccess').style.display = 'block';
-            } else { throw new Error(); }
-        })
-        .catch(function(){
-            btn.disabled = false;
-            btn.textContent = 'Try again — something went wrong';
-        });
-    });
-})();
-</script>
+                var formData = new FormData(form);
+                var data = {};
+                formData.forEach(function (value, key) { data[key] = value; });
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                })
+                    .then(function (r) {
+                        if (r.ok) {
+                            form.style.display = 'none';
+                            document.getElementById('cfSuccess').style.display = 'block';
+                        } else { throw new Error(); }
+                    })
+                    .catch(function () {
+                        btn.disabled = false;
+                        btn.textContent = 'Try again — something went wrong';
+                    });
+            });
+        })();
+
+        // Hamburger menu toggle
+        (function () {
+            var btn = document.querySelector('.menu-button');
+            var menu = document.querySelector('.nav-menu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', function () {
+                var open = btn.classList.toggle('is-open');
+                menu.classList.toggle('is-open', open);
+            });
+            // Close menu when a nav link is clicked
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    btn.classList.remove('is-open');
+                    menu.classList.remove('is-open');
+                });
+            });
+        })();
+    </script>
+
+    <style>
+        /* Hamburger menu open state */
+        .nav-menu { transition: opacity 0.25s ease; }
+        .nav-menu.is-open {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+        .menu-button .first-line,
+        .menu-button .second-line { transition: transform 0.25s ease; }
+        .menu-button.is-open .first-line { transform: translateY(4px) rotate(45deg); }
+        .menu-button.is-open .second-line { transform: translateY(-4px) rotate(-45deg); }
+    </style>
 
 </body>
+
 </html>
