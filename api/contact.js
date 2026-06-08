@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       from: 'Ayan Chakraborty <connect@ayanchakraborty.me>',
       to: ['connect@ayanchakraborty.me', 'shivab@xequalto.com'],
       reply_to: email,
-      subject: `New inquiry from ${name} — ${serviceLabel}`,
+      subject: `Just got a new inquiry from ${name} — ${serviceLabel}`,
       html: `<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
