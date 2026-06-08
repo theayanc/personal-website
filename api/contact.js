@@ -69,7 +69,7 @@ export default async function handler(req, res) {
 
   <!-- CARD -->
   <tr>
-    <td style="background:#ffffff;border-radius:16px;box-shadow:0 1px 4px rgba(97,143,190,0.06),0 12px 40px rgba(97,143,190,0.1);overflow:hidden;">
+    <td style="background:#ffffff;border-radius:16px;border:1px solid #c5d8eb;box-shadow:0 1px 4px rgba(97,143,190,0.06),0 12px 40px rgba(97,143,190,0.1);overflow:hidden;">
 
       <!-- HEADER -->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
