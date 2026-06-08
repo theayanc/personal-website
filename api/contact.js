@@ -124,7 +124,7 @@ export default async function handler(req, res) {
             <table role="presentation" cellpadding="0" cellspacing="0" border="0">
               <tr>
                 <td style="border-radius:6px;background:#7c3aed;" align="center">
-                  <a href="mailto:${email}?subject=Re: Your Inquiry — ${serviceLabel}" style="display:inline-block;padding:11px 28px;color:#ffffff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.01em;border-radius:6px;">
+                  <a href="mailto:${email}?cc=connect@ayanchakraborty.me&subject=Re: Your Inquiry — ${serviceLabel}" style="display:inline-block;padding:11px 28px;color:#ffffff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.01em;border-radius:6px;">
                     Reply to ${name}
                   </a>
                 </td>
