@@ -42,11 +42,11 @@ export default async function handler(req, res) {
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>New Inquiry</title>
 </head>
-<body style="margin:0;padding:0;background-color:#eef3f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+<body style="margin:0;padding:0;background-color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;">
 
-<div style="display:none;font-size:1px;color:#eef3f8;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">New inquiry from ${name} — ${serviceLabel}</div>
+<div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">New inquiry from ${name} — ${serviceLabel}</div>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#eef3f8;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;">
 <tr><td align="center" style="padding:48px 16px;">
 <table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;">
 
