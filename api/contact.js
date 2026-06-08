@@ -119,9 +119,11 @@ export default async function handler(req, res) {
     if (response.ok) {
       return res.status(200).json({ success: true, data });
     } else {
+      console.error('Resend error:', JSON.stringify(data));
       return res.status(400).json({ error: data });
     }
   } catch (error) {
+    console.error('Handler error:', error.message);
     return res.status(500).json({ error: error.message });
   }
 }
