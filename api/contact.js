@@ -14,11 +14,12 @@ export default async function handler(req, res) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   const serviceLabels = {
-    'performance': 'Performance Optimization',
     'architecture': 'Data Architecture',
-    'migration': 'Cloud Migration',
-    'consulting': 'Corporate Training',
-    'audit': 'Architecture Audit',
+    'ai': 'AI Implementation',
+    'performance': 'Performance Optimization',
+    'cost': 'Cost Optimization',
+    'enterprise': 'Enterprise Consulting',
+    'training': 'Corporate Training',
   };
 
   const serviceLabel = serviceLabels[service] || service || 'Not specified';
