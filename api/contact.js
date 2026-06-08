@@ -1,3 +1,5 @@
+import { Resend } from 'resend';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -9,121 +11,157 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  const serviceLabels = {
+    'performance': 'Performance Optimization',
+    'architecture': 'Data Architecture',
+    'migration': 'Cloud Migration',
+    'consulting': 'Corporate Training',
+    'audit': 'Architecture Audit',
+  };
+
+  const serviceLabel = serviceLabels[service] || service || 'Not specified';
+
+  const now = new Date().toLocaleDateString('en-IN', {
+    day: 'numeric', month: 'long', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata'
+  });
+
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        // Using the API key from environment variables
-        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
-      },
-      body: JSON.stringify({
-        // Resend requires a verified domain to send from, otherwise you can only use their onboarding test email 
-        // to send emails to the email address associated with your Resend account.
-        from: 'Contact Form <onboarding@resend.dev>',
-        to: ['connect@ayanchakraborty.me', 'shivab@xequalto.com'],
-        subject: `New Contact Form Submission from ${name}`,
-        html: `<!DOCTYPE html>
-<html lang="en">
+    await resend.emails.send({
+      from: 'Ayan Chakraborty <onboarding@resend.dev>',
+      to: ['connect@ayanchakraborty.me', 'shivab@xequalto.com'],
+      reply_to: email,
+      subject: `New inquiry from ${name} — ${serviceLabel}`,
+      html: `<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>New Inquiry</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>New Inquiry</title>
 </head>
-<body style="margin:0;padding:0;background:#0a0a0a;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a0a0a;padding:48px 16px;">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+<body style="margin:0;padding:0;background-color:#0a0a0a;font-family:'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;">
 
-          <!-- Header -->
-          <tr>
-            <td style="background:#111111;border-radius:16px 16px 0 0;padding:40px 48px 32px;border-bottom:1px solid #222;">
-              <p style="margin:0 0 16px;font-size:11px;letter-spacing:3px;color:#888;text-transform:uppercase;">New Inquiry</p>
-              <h1 style="margin:0;font-size:28px;font-weight:600;color:#ffffff;letter-spacing:-0.5px;">Contact Form Submission</h1>
-            </td>
-          </tr>
+<div style="display:none;font-size:1px;color:#0a0a0a;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
+  New inquiry from ${name} — ${serviceLabel}
+</div>
 
-          <!-- Body -->
-          <tr>
-            <td style="background:#111111;padding:32px 48px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0a0a0a;">
+<tr><td align="center" style="padding:48px 16px 40px;">
 
-              <!-- Name -->
-              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
-                <tr>
-                  <td style="background:#1a1a1a;border:1px solid #222;border-radius:10px;padding:20px 24px;">
-                    <p style="margin:0 0 4px;font-size:10px;letter-spacing:2px;color:#666;text-transform:uppercase;">Name</p>
-                    <p style="margin:0;font-size:16px;font-weight:500;color:#ffffff;">${name}</p>
-                  </td>
-                </tr>
-              </table>
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.6);">
 
-              <!-- Email -->
-              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
-                <tr>
-                  <td style="background:#1a1a1a;border:1px solid #222;border-radius:10px;padding:20px 24px;">
-                    <p style="margin:0 0 4px;font-size:10px;letter-spacing:2px;color:#666;text-transform:uppercase;">Email</p>
-                    <a href="mailto:${email}" style="margin:0;font-size:16px;font-weight:500;color:#a78bfa;text-decoration:none;">${email}</a>
-                  </td>
-                </tr>
-              </table>
+  <!-- HEADER -->
+  <tr>
+    <td style="background:linear-gradient(145deg,#0d0d0d 0%,#130d1f 50%,#1a0d2e 100%);padding:0;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="height:3px;background:linear-gradient(90deg,#6d28d9 0%,#a78bfa 50%,#6d28d9 100%);font-size:0;line-height:0;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td style="padding:40px 44px 16px;" align="center">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+              <tr>
+                <td style="background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.25);color:#c4b5fd;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:5px 16px;border-radius:50px;">
+                  &#9679;&nbsp; New Inquiry
+                </td>
+              </tr>
+            </table>
+            <h1 style="margin:20px 0 0;font-size:30px;font-weight:700;line-height:1.2;color:#ffffff;letter-spacing:-0.02em;text-align:center;">
+              ${name}
+            </h1>
+            <p style="margin:10px 0 4px;font-size:13px;color:rgba(196,181,253,0.7);text-align:center;">${serviceLabel}</p>
+            <p style="margin:0 0 36px;font-size:11px;color:rgba(167,139,250,0.4);text-align:center;">${now} IST</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 
-              <!-- Service -->
-              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
-                <tr>
-                  <td style="background:#1a1a1a;border:1px solid #222;border-radius:10px;padding:20px 24px;">
-                    <p style="margin:0 0 8px;font-size:10px;letter-spacing:2px;color:#666;text-transform:uppercase;">Service Interest</p>
-                    <span style="display:inline-block;background:#1e1533;border:1px solid #4c3d8a;border-radius:6px;padding:4px 14px;font-size:13px;font-weight:500;color:#a78bfa;letter-spacing:0.5px;">${service || 'Not specified'}</span>
-                  </td>
-                </tr>
-              </table>
+  <!-- DETAILS -->
+  <tr>
+    <td style="background-color:#111111;padding:36px 44px 0;">
+      <p style="margin:0 0 20px;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#6d28d9;">Contact Details</p>
 
-              <!-- Message -->
-              <table width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td style="background:#1a1a1a;border:1px solid #222;border-radius:10px;padding:20px 24px;">
-                    <p style="margin:0 0 12px;font-size:10px;letter-spacing:2px;color:#666;text-transform:uppercase;">Message</p>
-                    <p style="margin:0;font-size:15px;line-height:1.7;color:#cccccc;">${message.replace(/\n/g, '<br/>')}</p>
-                  </td>
-                </tr>
-              </table>
+      <!-- Email -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+        <tr>
+          <td style="padding:18px 22px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;">
+            <p style="margin:0 0 4px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#555;">Email</p>
+            <a href="mailto:${email}" style="font-size:14px;font-weight:600;color:#a78bfa;text-decoration:none;">${email}</a>
+          </td>
+        </tr>
+      </table>
 
-            </td>
-          </tr>
+      <!-- Service -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+        <tr>
+          <td style="padding:18px 22px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;">
+            <p style="margin:0 0 10px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#555;">Service Interest</p>
+            <span style="display:inline-block;background:#1e1533;border:1px solid #4c3d8a;border-radius:6px;padding:5px 16px;font-size:13px;font-weight:600;color:#a78bfa;letter-spacing:0.02em;">${serviceLabel}</span>
+          </td>
+        </tr>
+      </table>
 
-          <!-- CTA -->
-          <tr>
-            <td style="background:#111111;padding:0 48px 32px;">
-              <a href="mailto:${email}?subject=Re: Your inquiry" style="display:inline-block;background:#a78bfa;color:#0a0a0a;font-size:13px;font-weight:600;letter-spacing:0.5px;text-decoration:none;padding:14px 28px;border-radius:8px;">Reply to ${name}</a>
-            </td>
-          </tr>
+      <!-- Message -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:0;">
+        <tr>
+          <td style="padding:18px 22px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;">
+            <p style="margin:0 0 10px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#555;">Message</p>
+            <p style="margin:0;font-size:14px;line-height:1.75;color:#cccccc;">${message.replace(/\n/g, '<br/>')}</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 
-          <!-- Footer -->
-          <tr>
-            <td style="background:#0d0d0d;border-radius:0 0 16px 16px;border-top:1px solid #1a1a1a;padding:24px 48px;">
-              <p style="margin:0;font-size:12px;color:#444;">This message was sent via the contact form on <span style="color:#666;">ayanchakraborty.me</span></p>
-            </td>
-          </tr>
+  <!-- CTA -->
+  <tr>
+    <td style="background-color:#111111;padding:28px 44px 0;text-align:center;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+        <tr>
+          <td style="border-radius:50px;background:linear-gradient(135deg,#6d28d9 0%,#a78bfa 100%);box-shadow:0 4px 20px rgba(109,40,217,0.35);" align="center">
+            <a href="mailto:${email}?subject=Re: Your inquiry" style="display:inline-block;padding:14px 40px;color:#ffffff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.03em;border-radius:50px;">
+              Reply to ${name} &rsaquo;
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 
-        </table>
-      </td>
-    </tr>
-  </table>
+  <!-- DIVIDER -->
+  <tr>
+    <td style="background-color:#111111;padding:32px 44px 0;">
+      <div style="height:1px;background:linear-gradient(90deg,transparent 0%,#2a2a2a 20%,#2a2a2a 80%,transparent 100%);"></div>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td style="background-color:#111111;padding:24px 44px 36px;border-radius:0 0 20px 20px;" align="center">
+      <p style="margin:0;font-size:12px;color:#444;line-height:1.6;">
+        ayanchakraborty.me &middot; Data Architecture & Engineering
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#333;">
+        <a href="https://ayanchakraborty.me" style="color:#6d28d9;text-decoration:none;font-weight:500;">ayanchakraborty.me</a>
+      </p>
+    </td>
+  </tr>
+
+</table>
+
+</td></tr>
+</table>
+
 </body>
 </html>`
-      })
     });
 
-    const data = await response.json();
-
-    if (response.ok) {
-      return res.status(200).json({ success: true, data });
-    } else {
-      console.error('Resend error:', JSON.stringify(data));
-      return res.status(400).json({ error: data });
-    }
-  } catch (error) {
-    console.error('Handler error:', error.message);
-    return res.status(500).json({ error: error.message });
+    return res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('Resend error:', err);
+    return res.status(500).json({ error: 'Failed to send email' });
   }
-}
+};
