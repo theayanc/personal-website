@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   try {
     await resend.emails.send({
       from: 'Ayan Chakraborty <onboarding@resend.dev>',
-      to: ['shivab@xequalto.com'],
+      to: ['connect@ayanchakraborty.me'],
       reply_to: email,
       subject: `New inquiry from ${name} — ${serviceLabel}`,
       html: `<!DOCTYPE html>
