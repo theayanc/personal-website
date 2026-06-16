@@ -4006,7 +4006,7 @@ ul, ol {
 }
 
 .footer-details {
-  grid-column-gap: 80px;
+  grid-column-gap: 140px;
   grid-row-gap: 40px;
   flex-direction: row;
   justify-content: space-between;
