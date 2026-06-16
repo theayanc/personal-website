@@ -1,0 +1,63 @@
+# Ayan Chakraborty — Enterprise Data Architect & Consultant
+
+> Official portfolio of Ayan Chakraborty, an independent Enterprise Data Architect & Consultant with 14+ years of experience building petabyte-scale data infrastructure for global enterprises. Top 3% expert on Toptal.
+
+## About
+
+Ayan Chakraborty is an Enterprise Data Architect and Consultant who designs, leads, and delivers mission-critical data systems for global enterprises. He works directly with companies — not through an agency. His core philosophy: precision architecture, enterprise impact, zero compromise.
+
+- 14+ years of hands-on experience
+- 100+ enterprise projects delivered
+- Top 3% globally on Toptal
+- Clients include: Cognizant, PepsiCo, IPG, Lotlinx, Acronym, Alef, Brightly, NetZoom, Nous, Shega, Solaris, Yara
+
+## Core Expertise
+
+- **Enterprise Data Architecture** — Designing scalable, secure, cost-effective data platforms for petabyte-scale workloads
+- **Databricks** — Expert-level implementation, optimization, and governance
+- **Snowflake** — Data warehousing, architecture, cost optimization
+- **AWS & GCP** — Cloud-native data pipelines and infrastructure
+- **AI & ML Implementation** — Production-ready AI pipeline development on top of robust data foundations
+- **Data Security & Governance** — Compliance frameworks, security policies, enterprise data governance
+- **Cloud Cost Optimization** — Reducing cloud spend on Databricks, Snowflake, and AWS environments
+- **Corporate Training** — Upskilling engineering teams in data architecture and modern data stack
+
+## Services
+
+1. **Strategic Data Consulting** — Aligning data strategy with business goals; building long-term data roadmaps
+2. **Scalable Data Architecture** — Designing data platforms built for performance, growth, and security
+3. **Enterprise AI Implementation** — Deploying production-ready AI and ML pipelines
+4. **Data Security & Governance** — Implementing compliance standards and governance frameworks
+5. **Cost & Resource Optimization** — Cutting cloud overhead; maximizing ROI on data investments
+6. **Corporate Data Training** — Mentorship and team upskilling across Databricks, Snowflake, and AWS
+
+Ayan offers both **Fractional Data Architect** engagements (advisory) and **full end-to-end implementations** depending on client needs.
+
+## Industries Served
+
+Banking & Finance, Retail & E-commerce, Healthcare & Life Sciences, Manufacturing & Supply Chain, Technology & SaaS, Telecom & Media, Energy & Utilities, Education & EdTech
+
+## Career Roadmap Approach
+
+Ayan also shares a structured Data Engineering career roadmap — mapping the journey from College → Junior Data Engineer → Senior Data Engineer → Data Lead → Data Architect. This reflects his mentorship philosophy and educational content available on his YouTube channel.
+
+## Testimonials
+
+**Debarshi Dutta (Managing Director, Data & AI):** "Ayan consistently demonstrated strong technical expertise, ownership, and architectural thinking. His ability to design scalable, reliable data solutions made him a key contributor to project success."
+
+**Diana Yin (AI Product Management):** "Ayan combines deep expertise in data ecosystems with exceptional collaboration and leadership. Reliable, adaptable, and always willing to mentor others."
+
+**Matti Kakkori (AI Product):** "Ayan is a talented data professional who consistently delivers high-quality work. His expertise in data pipelines, warehousing, and analytics makes him a valuable asset to any team."
+
+**Anton Sakharov (Senior Big Data Engineer):** "Ayan brings exceptional expertise in data warehousing and visualization, paired with a strong work ethic and collaborative mindset. His mentoring ability and commitment to excellence make him an invaluable asset."
+
+**Vishwatosh Tripathi:** "Working with Ayan was a genuine pleasure. He brings clarity to complex data challenges and elevates the entire team with his depth of knowledge and collaborative energy."
+
+## Contact & Links
+
+- Website: https://www.ayanchakraborty.me
+- Contact: https://www.ayanchakraborty.me/contact.html
+- Email: connect@ayanchakraborty.me
+- LinkedIn: https://www.linkedin.com/in/ayanchakraborty-data/
+- YouTube: https://www.youtube.com/@ayanchakraborty-data
+- Toptal: https://www.toptal.com/developers/resume/ayan-chakraborty
